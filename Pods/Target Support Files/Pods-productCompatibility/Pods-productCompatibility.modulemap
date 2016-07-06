@@ -1,0 +1,6 @@
+framework module Pods_productCompatibility {
+  umbrella header "Pods-productCompatibility-umbrella.h"
+
+  export *
+  module * { export * }
+}
