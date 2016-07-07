@@ -11,7 +11,7 @@ import Alamofire
 class BBYAPIController {
     
     func getBBYJSONproductbySKU(sku: String) {
-        Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(sku=\(sku)?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=sku.asc&show=sku,name,manufacturer,salePrice&callback=JSON_CALLBACK&format=json")
+        Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(sku=\(sku)?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=sku.asc&show=sku,name,manufacturer,salePrice,image&format=json")
             .responseJSON { response in
                 debugPrint(response)
         }

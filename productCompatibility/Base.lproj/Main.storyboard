@@ -116,7 +116,7 @@
                                         <rect key="frame" x="8" y="98" width="584" height="32"/>
                                         <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Second SKU Number"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableClearIconButton" value="YES"/>
@@ -177,7 +177,7 @@
                                         <rect key="frame" x="8" y="220" width="584" height="32"/>
                                         <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Notes"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableClearIconButton" value="YES"/>
@@ -206,7 +206,7 @@
                                         <rect key="frame" x="8" y="159" width="584" height="32"/>
                                         <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Employee Number"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableClearIconButton" value="YES"/>
@@ -235,7 +235,7 @@
                                         <rect key="frame" x="8" y="37" width="584" height="32"/>
                                         <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="First SKU Number"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="enableClearIconButton" value="YES"/>

@@ -22,11 +22,20 @@ class ManualInputController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ManualInputController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @IBAction func createManualRelationship() {
@@ -88,6 +97,11 @@ class ManualInputController: UIViewController {
                 }
             }
         
+            Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(sku=\(firstSKU)?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=sku.asc&show=sku,name,manufacturer,salePrice,image&format=json")
+                .responseJSON { response in
+                    debugPrint(response)
+            }
+            
         }
         
         // Quickly get all of the relationships just to double check that everything worked and it was posted.
