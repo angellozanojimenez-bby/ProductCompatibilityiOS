@@ -10,7 +10,7 @@ import UIKit
 import Material
 import Alamofire
 
-class ManualInputController: UIViewController {
+class ManualInputViewController: UIViewController {
 
     @IBOutlet var firstSKUnumber: TextField!
     @IBOutlet var secondSKUnumber: TextField!
@@ -23,7 +23,7 @@ class ManualInputController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ManualInputController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ManualInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
 

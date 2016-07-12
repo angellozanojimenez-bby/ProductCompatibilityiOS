@@ -17,4 +17,11 @@ class BBYAPIController {
         }
     }
     
+    func getBBYJSONproductbyUPC(upc: String) {
+        Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(upc=\(upc)?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=sku.asc&show=sku,name,manufacturer,salePrice,image&format=json")
+            .responseJSON { response in
+                debugPrint(response)
+        }
+    }
+    
 }

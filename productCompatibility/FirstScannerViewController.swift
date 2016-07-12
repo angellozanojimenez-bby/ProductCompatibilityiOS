@@ -10,10 +10,12 @@
 import UIKit
 import AVFoundation
 
-class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class FirstScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
     var session: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var trimmedCodeString: String = ""
+    var trimmedCodeNoZero: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,6 +127,7 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             
             // Avoid a very buzzy device.
+            print(barcodeReadable!.stringValue)
             
             session.stopRunning()
         }
@@ -144,20 +147,21 @@ class ScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             // EAN or UPC?
             // Check for added "0" at beginning of code.
             
-            let trimmedCodeString = "\(trimmedCode)"
-            var trimmedCodeNoZero: String
+            self.trimmedCodeString = "\(trimmedCode)"
             
-            if trimmedCodeString.hasPrefix("0") && trimmedCodeString.characters.count > 1 {
-                trimmedCodeNoZero = String(trimmedCodeString.characters.dropFirst())
+            if self.trimmedCodeString.hasPrefix("0") && self.trimmedCodeString.characters.count > 1 {
+                self.trimmedCodeNoZero = String(self.trimmedCodeString.characters.dropFirst())
                 
                 // Send the doctored UPC to DataService.searchAPI()
                 
                 // DataService.searchAPI(trimmedCodeNoZero)
+                print("Code with no zero: " + self.trimmedCodeNoZero)
             } else {
                 
                 // Send the doctored EAN to DataService.searchAPI()
                 
                 // DataService.searchAPI(trimmedCodeString)
+                print("Code with zero: " + self.trimmedCodeString)
             }
             
             self.navigationController?.popViewControllerAnimated(true)
