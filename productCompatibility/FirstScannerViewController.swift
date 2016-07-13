@@ -16,6 +16,7 @@ class FirstScannerViewController: UIViewController, AVCaptureMetadataOutputObjec
     var previewLayer: AVCaptureVideoPreviewLayer!
     var trimmedCodeString: String = ""
     var trimmedCodeNoZero: String = ""
+    @IBOutlet weak var doneWithScanning: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,10 +74,15 @@ class FirstScannerViewController: UIViewController, AVCaptureMetadataOutputObjec
         previewLayer.frame = view.layer.bounds;
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         view.layer.addSublayer(previewLayer);
-        
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(FirstScannerViewController.returnToInputScreen)), animated: true)
         // Begin the capture session.
         
         session.startRunning()
+    
+    }
+    
+    func returnToInputScreen() {
+        performSegueWithIdentifier("returnFromFirstScanner", sender: self)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -164,9 +170,21 @@ class FirstScannerViewController: UIViewController, AVCaptureMetadataOutputObjec
                 print("Code with zero: " + self.trimmedCodeString)
             }
             
-            self.navigationController?.popViewControllerAnimated(true)
+            //self.navigationController?.popViewControllerAnimated(true)
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "returnFromFirstScanner" {
+            print("Returning from the first scan!")
+            let destinationController = segue.destinationViewController as! ScannerInputViewController
+            destinationController.firstUPCstringNoZero = self.trimmedCodeNoZero
+            destinationController.firstUPCstring = self.trimmedCodeString
+            print("First UPC String No Zero: " + destinationController.firstUPCstringNoZero)
+            print("First UPC String: " + destinationController.firstUPCstring)
+            
+        }
     }
 }

@@ -169,4 +169,10 @@ class SecondScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "returnFromSecondScanner" {
+            print("Returning from the second scan!")
+        }
+    }
 }

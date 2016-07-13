@@ -16,8 +16,14 @@ class ScannerInputViewController: UIViewController {
     @IBOutlet var employeeNumber: TextField!
     @IBOutlet var notesInput: TextField!
     @IBOutlet var relationshipType: UISwitch!
+    var firstUPCstringNoZero: String = ""
     var firstUPCstring: String = ""
+    var secondUPCstringNoZero: String = ""
     var secondUPCstring: String = ""
+    
+    // Outlets to update the numbers that come back from the scanner.
+    @IBOutlet weak var firstUPCLabel: UILabel!
+    @IBOutlet weak var secondUPCLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +31,7 @@ class ScannerInputViewController: UIViewController {
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ManualInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,10 +47,12 @@ class ScannerInputViewController: UIViewController {
     @IBAction func scanFirstUPC() {
         // Do whatever it takes to scan a UPC/barcode.
         // Take us to the ScannerController class.
-        print("In the ScannerController class now, looking for barcode.")
+        print("In the ScannerController class now, looking for barcode. First.")
     }
     @IBAction func scanSecondUPC() {
-        // The same as the one above.
+        // Do whatever it takes to scan a UPC/barcode.
+        // Take us to the ScannerController class.
+        print("In the ScannerController class now, looking for barcode. Second.")
     }
     
     @IBAction func createScannedRelationship() {
