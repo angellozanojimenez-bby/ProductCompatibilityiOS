@@ -40,6 +40,20 @@ class ScannerInputViewController: UIViewController {
             firstUPCLabel.text = "First UPC #"
         }
         
+        if secondUPCStringNoZero.characters.count == 12 {
+            secondUPCLabel.text = "Second UPC #" + secondUPCStringNoZero
+        } else if secondUPCString.characters.count == 12 {
+            firstUPCLabel.text = "Second UPC #" + secondUPCString
+        } else {
+            secondUPCLabel.text = "Second UPC #"
+        }
+        
+        print("#1: " + firstUPCStringNoZero)
+        print("#2: " + firstUPCString)
+        print("#3: " + secondUPCStringNoZero)
+        print("#4: " + secondUPCString)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,24 +68,13 @@ class ScannerInputViewController: UIViewController {
     @IBAction func scanFirstUPC() {
         // Do whatever it takes to scan a UPC/barcode.
         // Take us to the ScannerController class.
-        print("In the ScannerController class now, looking for barcode. First.")
-        updateFirstLabel()
-    }
-    
-    func updateFirstLabel() {
-        if firstUPCStringNoZero.characters.count == 12 {
-            firstUPCLabel.text = firstUPCStringNoZero
-        } else if firstUPCString.characters.count == 12 {
-            firstUPCLabel.text = firstUPCString
-        } else {
-            firstUPCLabel.text = "Wrong UPC format, try again!"
-        }
+        //print("In the ScannerController class now, looking for barcode. First.")
     }
     
     @IBAction func scanSecondUPC() {
         // Do whatever it takes to scan a UPC/barcode.
         // Take us to the ScannerController class.
-        print("In the ScannerController class now, looking for barcode. Second.")
+        //print("In the ScannerController class now, looking for barcode. Second.")
     }
 
     @IBAction func createScannedRelationship() {
@@ -91,6 +94,35 @@ class ScannerInputViewController: UIViewController {
         Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/incompatible_relationships/", headers: headers)
             .responseJSON { response in
                 debugPrint(response)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goingToFirstScanner" {
+            print("We are going to the first Scanner!")
+            let destinationController = segue.destinationViewController as! FirstScannerViewController
+            if secondUPCStringNoZero.characters.count != 0 && secondUPCStringNoZero.characters.count == 12 {
+                destinationController.secondUPCFromMenu = self.secondUPCStringNoZero
+            } else if secondUPCString.characters.count != 0 && secondUPCString.characters.count == 12 {
+                destinationController.secondUPCFromMenu = self.secondUPCString
+            } else {
+                destinationController.secondUPCFromMenu = ""
+                //print("Second UPC still has not been set.")
+            }
+        } else if segue.identifier == "goingToSecondScanner" {
+            print("We are going to the second Scanner!")
+            let destinationController = segue.destinationViewController as! SecondScannerViewController
+            if firstUPCStringNoZero.characters.count != 0 && firstUPCStringNoZero.characters.count == 12 {
+                destinationController.firstUPCFromMenu = self.firstUPCStringNoZero
+            } else if firstUPCString.characters.count != 0 && firstUPCString.characters.count == 12 {
+                destinationController.firstUPCFromMenu = self.firstUPCString
+            } else {
+                //print("First UPC still has not been set")
+                destinationController.firstUPCFromMenu = ""
+            }
+            
+        } else {
+            //print("This segue has not been given any extra features.")
         }
     }
     

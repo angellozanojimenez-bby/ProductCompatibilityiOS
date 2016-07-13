@@ -279,7 +279,7 @@
                                 <connections>
                                     <action selector="createManualRelationship" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vg0-qm-bY9"/>
                                     <action selector="scanFirstUPC" destination="3R1-7a-VvH" eventType="touchUpInside" id="MEZ-Vr-7A3"/>
-                                    <segue destination="ayh-BK-wOS" kind="show" id="39x-Ur-Jua"/>
+                                    <segue destination="ayh-BK-wOS" kind="show" identifier="goingToFirstScanner" id="39x-Ur-Jua"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pn5-sX-OVC" customClass="RaisedButton" customModule="Material">
@@ -313,7 +313,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="scanSecondUPC" destination="3R1-7a-VvH" eventType="touchUpInside" id="ulD-fI-BWG"/>
-                                    <segue destination="a4y-aP-8bF" kind="show" id="3kJ-Xa-mVS"/>
+                                    <segue destination="a4y-aP-8bF" kind="show" identifier="goingToSecondScanner" id="8zn-JU-HYi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCc-2G-6pL" customClass="RaisedButton" customModule="Material">
@@ -346,7 +346,7 @@
                                 <connections>
                                     <action selector="createManualRelationship" destination="BYZ-38-t0r" eventType="touchUpInside" id="gmK-SA-YqB"/>
                                     <action selector="createScannedRelationship" destination="3R1-7a-VvH" eventType="touchUpInside" id="LoO-Xp-gm3"/>
-                                    <segue destination="TVt-0D-bHH" kind="show" id="8Pw-Yq-vav"/>
+                                    <segue destination="TVt-0D-bHH" kind="show" id="BsY-Uj-x4p"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First UPC #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDo-UN-Bh7">
@@ -750,7 +750,7 @@
         <image name="greenmark.png" width="800" height="800"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a7C-jw-qbE"/>
-        <segue reference="8Pw-Yq-vav"/>
+        <segue reference="kIA-EZ-IOA"/>
+        <segue reference="BsY-Uj-x4p"/>
     </inferredMetricsTieBreakers>
 </document>

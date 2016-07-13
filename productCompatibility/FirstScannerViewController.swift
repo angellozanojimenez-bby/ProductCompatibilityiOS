@@ -17,6 +17,9 @@ class FirstScannerViewController: UIViewController, AVCaptureMetadataOutputObjec
     var trimmedCodeString: String = ""
     var trimmedCodeNoZero: String = ""
     @IBOutlet weak var doneWithScanning: UIButton!
+    // If one of the two has already been set by the time we enter this controller, we are going to save them
+    // and them pass them back.
+    var secondUPCFromMenu: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,12 +181,14 @@ class FirstScannerViewController: UIViewController, AVCaptureMetadataOutputObjec
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "returnFromFirstScanner" {
-            print("Returning from the first scan!")
+            //print("Returning from the first scan!")
             let destinationController = segue.destinationViewController as! ScannerInputViewController
             destinationController.firstUPCStringNoZero = self.trimmedCodeNoZero
             destinationController.firstUPCString = self.trimmedCodeString
-            print("First UPC String No Zero: " + destinationController.firstUPCStringNoZero)
-            print("First UPC String: " + destinationController.firstUPCString)
+            destinationController.secondUPCStringNoZero = self.secondUPCFromMenu
+            destinationController.secondUPCString = self.secondUPCFromMenu
+            //print("First UPC String No Zero: " + destinationController.firstUPCStringNoZero)
+            //print("First UPC String: " + destinationController.firstUPCString)
             
         }
     }

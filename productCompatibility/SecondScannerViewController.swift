@@ -16,6 +16,9 @@ class SecondScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     var previewLayer: AVCaptureVideoPreviewLayer!
     var trimmedCodeString: String = ""
     var trimmedCodeNoZero: String = ""
+    // If one of the two has already been set by the time we enter this controller, we are going to save them
+    // and them pass them back.
+    var firstUPCFromMenu: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,10 +76,14 @@ class SecondScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         previewLayer.frame = view.layer.bounds;
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         view.layer.addSublayer(previewLayer);
-        
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(SecondScannerViewController.returnToInputScreen)), animated: true)
         // Begin the capture session.
         
         session.startRunning()
+    }
+    
+    func returnToInputScreen() {
+        performSegueWithIdentifier("returnFromSecondScanner", sender: self)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -164,7 +171,7 @@ class SecondScannerViewController: UIViewController, AVCaptureMetadataOutputObje
                 print("Code with zero: " + self.trimmedCodeString)
             }
             
-            self.navigationController?.popViewControllerAnimated(true)
+            //self.navigationController?.popViewControllerAnimated(true)
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
@@ -172,7 +179,14 @@ class SecondScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "returnFromSecondScanner" {
-            print("Returning from the second scan!")
+            //print("Returning from the second scan!")
+            let destinationController = segue.destinationViewController as! ScannerInputViewController
+            destinationController.secondUPCStringNoZero = self.trimmedCodeNoZero
+            destinationController.secondUPCString = self.trimmedCodeString
+            destinationController.firstUPCStringNoZero = self.firstUPCFromMenu
+            destinationController.firstUPCString = self.firstUPCFromMenu
+            //print("Second UPC String No Zero: " + destinationController.secondUPCStringNoZero)
+            //print("Second UPC String: " + destinationController.firstUPCString)
         }
     }
 }
