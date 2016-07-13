@@ -25,6 +25,12 @@ class ScannerInputViewController: UIViewController {
     @IBOutlet weak var firstUPCLabel: UILabel!
     @IBOutlet weak var secondUPCLabel: UILabel!
     
+    // Headers used for the HTTP requests.
+    let headers = [
+        "Accept": "application/vnd.productcompatibility.v1",
+        "ContentType": "application/json"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -48,12 +54,6 @@ class ScannerInputViewController: UIViewController {
             secondUPCLabel.text = "Second UPC #"
         }
         
-        print("#1: " + firstUPCStringNoZero)
-        print("#2: " + firstUPCString)
-        print("#3: " + secondUPCStringNoZero)
-        print("#4: " + secondUPCString)
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,6 +65,7 @@ class ScannerInputViewController: UIViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
     @IBAction func scanFirstUPC() {
         // Do whatever it takes to scan a UPC/barcode.
         // Take us to the ScannerController class.
@@ -79,27 +80,71 @@ class ScannerInputViewController: UIViewController {
 
     @IBAction func createScannedRelationship() {
         // Create a relationship from the scanned products.
-        // Headers used for the HTTP requests.
-        let headers = [
-            "Accept": "application/vnd.productcompatibility.v1",
-            "ContentType": "application/json"
-        ]
-    
-        // Quickly get all of the relationships just to double check that everything worked and it was posted.
-        Alamofire.request(.GET,  "http://api.productcompatibilityapi.dev/relationships/", headers: headers)
-            .responseJSON { response in
-                debugPrint(response)
-        }
         
-        Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/incompatible_relationships/", headers: headers)
-            .responseJSON { response in
-                debugPrint(response)
+        // We must check if the attributes are present! If so, go into the loop and execute the HTTP methods.
+        if self.firstUPCStringNoZero != "" && self.secondUPCStringNoZero != "" {
+            if let employeeNumber = employeeNumber.text, let notes = notesInput.text {
+                
+                let parameters = [
+                    "relationships": [
+                        "primary_node_sku_or_upc":"\(self.firstUPCStringNoZero)",
+                        "secondary_node_sku_or_upc":"\(self.secondUPCStringNoZero)", "employee_numbers":"\(employeeNumber)",
+                        "notes":"\(notes)"
+                        
+                    
+                    ]
+                ]
+                
+                let incompatible_parameters = [
+                    "incompatible_relationships": [
+                        "primary_node_sku_or_upc":"\(self.firstUPCStringNoZero)",
+                        "secondary_node_sku_or_upc":"\(self.secondUPCStringNoZero)", "employee_numbers":"\(employeeNumber)",
+                        "notes":"\(notes)"
+                        
+                        
+                    ]
+                ]
+                
+                // Let's check what our parameters are.
+                print("First UPC: " + self.firstUPCStringNoZero)
+                print("Second UPC: " + self.secondUPCStringNoZero)
+                print("Employee #: " + employeeNumber)
+                print("Notes: " + notes)
+                print("Compatible?: " + relationshipType.on.description)
+                
+                if relationshipType.on {
+                    // Here we create a POST method that takes in our headers and parameters and returns a message whether the method was successful or not.
+                    // Note that in this instance, the RelationshipType button is on, meaning that the products work with one another.
+                    Alamofire.request(.POST, "http://api.productcompatibilityapi.dev/relationships/", headers: headers, parameters: parameters)
+                        .validate(statusCode: 200..<300)
+                        .responseJSON { response in
+                            switch response.result {
+                            case .Success:
+                                print("Validation Successful, Compatible Relationship created.")
+                            case .Failure(let error):
+                                print(error)
+                            }
+                    }
+                } else {
+                    // Here we create a POST method that takes in our headers and parameters and returns a message whether the method was successful or not.
+                    // Note that in this instance, the RelationshipType button is off, meaning that the products do not work with one another.
+                    Alamofire.request(.POST, "http://api.productcompatibilityapi.dev/incompatible_relationships/", headers: headers, parameters: incompatible_parameters)
+                        .validate(statusCode: 200..<300)
+                        .responseJSON { response in
+                            switch response.result {
+                            case .Success:
+                                print("Validation Successful, Incompatible Relationship created.")
+                            case .Failure(let error):
+                                print(error)
+                            }
+                    }
+                }
+            }
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goingToFirstScanner" {
-            print("We are going to the first Scanner!")
             let destinationController = segue.destinationViewController as! FirstScannerViewController
             if secondUPCStringNoZero.characters.count != 0 && secondUPCStringNoZero.characters.count == 12 {
                 destinationController.secondUPCFromMenu = self.secondUPCStringNoZero
@@ -110,14 +155,12 @@ class ScannerInputViewController: UIViewController {
                 //print("Second UPC still has not been set.")
             }
         } else if segue.identifier == "goingToSecondScanner" {
-            print("We are going to the second Scanner!")
             let destinationController = segue.destinationViewController as! SecondScannerViewController
             if firstUPCStringNoZero.characters.count != 0 && firstUPCStringNoZero.characters.count == 12 {
                 destinationController.firstUPCFromMenu = self.firstUPCStringNoZero
             } else if firstUPCString.characters.count != 0 && firstUPCString.characters.count == 12 {
                 destinationController.firstUPCFromMenu = self.firstUPCString
             } else {
-                //print("First UPC still has not been set")
                 destinationController.firstUPCFromMenu = ""
             }
             

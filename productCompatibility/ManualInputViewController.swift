@@ -19,6 +19,12 @@ class ManualInputViewController: UIViewController {
     @IBOutlet var relationshipType: UISwitch!
     var BBYAPI = BBYAPIController()
     
+    // Headers used for the HTTP requests.
+    let headers = [
+        "Accept": "application/vnd.productcompatibility.v1",
+        "ContentType": "application/json"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,20 +47,14 @@ class ManualInputViewController: UIViewController {
     @IBAction func createManualRelationship() {
         print("You created a new manual relationship!")
         
-        // Headers used for the HTTP requests.
-        let headers = [
-            "Accept": "application/vnd.productcompatibility.v1",
-            "ContentType": "application/json"
-        ]
-        
         // We must check if the attributes are present! If so, go into the loop and execute the HTTP methods.
         if let firstSKU = firstSKUnumber.text, let secondSKU = secondSKUnumber.text, let employeeNumber = employeeNumber.text, let notes = notesInput.text {
             
             // We create the parameters that are going to be passed into the HTTP POST method.
             let parameters = [
                 "relationships": [
-                    "primary_node_sku":"\(firstSKU)",
-                    "secondary_node_sku":"\(secondSKU)",
+                    "primary_node_sku_or_upc":"\(firstSKU)",
+                    "secondary_node_sku_or_upc":"\(secondSKU)",
                     "employee_number":"\(employeeNumber)",
                     "notes":"\(notes)"
                 ]
@@ -62,12 +62,19 @@ class ManualInputViewController: UIViewController {
 
             let incompatible_parameters = [
                 "incompatible_relationships": [
-                    "primary_node_sku":"\(firstSKU)",
-                    "secondary_node_sku":"\(secondSKU)",
+                    "primary_node_sku_or_upc":"\(firstSKU)",
+                    "secondary_node_sku_or_upc":"\(secondSKU)",
                     "employee_number":"\(employeeNumber)",
                     "notes":"\(notes)"
                 ]
             ]
+            
+            // Let's check what our parameters are.
+            print("First SKU: " + firstSKU)
+            print("Second SKU: " + secondSKU)
+            print("Employee #: " + employeeNumber)
+            print("Notes: " + notes)
+            print("Compatible?: " + relationshipType.on.description)
             
             if relationshipType.on {
                 // Here we create a POST method that takes in our headers and parameters and returns a message whether the method was successful or not.
@@ -98,18 +105,6 @@ class ManualInputViewController: UIViewController {
             }
             
         }
-        
-        // Quickly get all of the relationships just to double check that everything worked and it was posted.
-        Alamofire.request(.GET,  "http://api.productcompatibilityapi.dev/relationships/", headers: headers)
-            .responseJSON { response in
-                debugPrint(response)
-        }
-        
-        Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/incompatible_relationships/", headers: headers)
-            .responseJSON { response in
-                debugPrint(response)
-        }
-        
     }
 
 }

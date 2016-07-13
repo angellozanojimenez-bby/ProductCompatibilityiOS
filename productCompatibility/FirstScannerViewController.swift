@@ -164,13 +164,11 @@ class FirstScannerViewController: UIViewController, AVCaptureMetadataOutputObjec
                 // Send the doctored UPC to DataService.searchAPI()
                 
                 // DataService.searchAPI(trimmedCodeNoZero)
-                print("Code with no zero: " + self.trimmedCodeNoZero)
             } else {
                 
                 // Send the doctored EAN to DataService.searchAPI()
                 
                 // DataService.searchAPI(trimmedCodeString)
-                print("Code with zero: " + self.trimmedCodeString)
             }
             
             //self.navigationController?.popViewControllerAnimated(true)
@@ -187,9 +185,6 @@ class FirstScannerViewController: UIViewController, AVCaptureMetadataOutputObjec
             destinationController.firstUPCString = self.trimmedCodeString
             destinationController.secondUPCStringNoZero = self.secondUPCFromMenu
             destinationController.secondUPCString = self.secondUPCFromMenu
-            //print("First UPC String No Zero: " + destinationController.firstUPCStringNoZero)
-            //print("First UPC String: " + destinationController.firstUPCString)
-            
         }
     }
 }
