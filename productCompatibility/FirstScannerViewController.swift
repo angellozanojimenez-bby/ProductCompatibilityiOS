@@ -180,10 +180,10 @@ class FirstScannerViewController: UIViewController, AVCaptureMetadataOutputObjec
         if segue.identifier == "returnFromFirstScanner" {
             print("Returning from the first scan!")
             let destinationController = segue.destinationViewController as! ScannerInputViewController
-            destinationController.firstUPCstringNoZero = self.trimmedCodeNoZero
-            destinationController.firstUPCstring = self.trimmedCodeString
-            print("First UPC String No Zero: " + destinationController.firstUPCstringNoZero)
-            print("First UPC String: " + destinationController.firstUPCstring)
+            destinationController.firstUPCStringNoZero = self.trimmedCodeNoZero
+            destinationController.firstUPCString = self.trimmedCodeString
+            print("First UPC String No Zero: " + destinationController.firstUPCStringNoZero)
+            print("First UPC String: " + destinationController.firstUPCString)
             
         }
     }

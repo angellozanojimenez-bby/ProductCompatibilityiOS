@@ -16,10 +16,10 @@ class ScannerInputViewController: UIViewController {
     @IBOutlet var employeeNumber: TextField!
     @IBOutlet var notesInput: TextField!
     @IBOutlet var relationshipType: UISwitch!
-    var firstUPCstringNoZero: String = ""
-    var firstUPCstring: String = ""
-    var secondUPCstringNoZero: String = ""
-    var secondUPCstring: String = ""
+    var firstUPCStringNoZero: String = ""
+    var firstUPCString: String = ""
+    var secondUPCStringNoZero: String = ""
+    var secondUPCString: String = ""
     
     // Outlets to update the numbers that come back from the scanner.
     @IBOutlet weak var firstUPCLabel: UILabel!
@@ -32,12 +32,19 @@ class ScannerInputViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ManualInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        if firstUPCStringNoZero.characters.count == 12 {
+            firstUPCLabel.text = "First UPC #" + firstUPCStringNoZero
+        } else if firstUPCString.characters.count == 12 {
+            firstUPCLabel.text = "First UPC #" + firstUPCString
+        } else {
+            firstUPCLabel.text = "First UPC #"
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
@@ -48,13 +55,25 @@ class ScannerInputViewController: UIViewController {
         // Do whatever it takes to scan a UPC/barcode.
         // Take us to the ScannerController class.
         print("In the ScannerController class now, looking for barcode. First.")
+        updateFirstLabel()
     }
+    
+    func updateFirstLabel() {
+        if firstUPCStringNoZero.characters.count == 12 {
+            firstUPCLabel.text = firstUPCStringNoZero
+        } else if firstUPCString.characters.count == 12 {
+            firstUPCLabel.text = firstUPCString
+        } else {
+            firstUPCLabel.text = "Wrong UPC format, try again!"
+        }
+    }
+    
     @IBAction func scanSecondUPC() {
         // Do whatever it takes to scan a UPC/barcode.
         // Take us to the ScannerController class.
         print("In the ScannerController class now, looking for barcode. Second.")
     }
-    
+
     @IBAction func createScannedRelationship() {
         // Create a relationship from the scanned products.
         // Headers used for the HTTP requests.
