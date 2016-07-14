@@ -35,7 +35,7 @@ class ManualInputViewController: UIViewController {
         view.addGestureRecognizer(tap)
         
         
-        print("First SKU Number: " + firstSKUnumber.text!)
+        print("First SKU Number Type: " + String(firstSKUnumber.text!.dynamicType))
         print("Second SKU Number: " + secondSKUnumber.text!)
         print("Notes Input: " + notesInput.text!)
         print("Employee #: " + employeeNumber.text!)
@@ -62,6 +62,22 @@ class ManualInputViewController: UIViewController {
             submitButton.backgroundColor = UIColor(red: 0.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
         } else {
             submitButton.enabled = false
+        }
+        
+        if firstSKUnumber.hasText() {
+            firstSKUnumber.detailColor = UIColor(red: 0.0/255.0, green: 178.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        }
+        
+        if secondSKUnumber.hasText() {
+            secondSKUnumber.detailColor = UIColor(red: 0.0/255.0, green: 178.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        }
+        
+        if employeeNumber.hasText() {
+            employeeNumber.detailColor = UIColor(red: 0.0/255.0, green: 178.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        }
+        
+        if notesInput.hasText() {
+            notesInput.detailColor = UIColor(red: 0.0/255.0, green: 178.0/255.0, blue: 0.0/255.0, alpha: 1.0)
         }
     }
     

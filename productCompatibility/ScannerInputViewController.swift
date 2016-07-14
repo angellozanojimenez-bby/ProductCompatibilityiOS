@@ -79,6 +79,15 @@ class ScannerInputViewController: UIViewController {
         } else {
             submitButton.enabled = false
         }
+        
+        
+        if employeeNumber.hasText() {
+            employeeNumber.detailColor = UIColor(red: 0.0/255.0, green: 178.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        }
+        
+        if notesInput.hasText() {
+            notesInput.detailColor = UIColor(red: 0.0/255.0, green: 178.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        }
     }
     
     
