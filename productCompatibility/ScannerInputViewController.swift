@@ -24,6 +24,7 @@ class ScannerInputViewController: UIViewController {
     // Outlets to update the numbers that come back from the scanner.
     @IBOutlet weak var firstUPCLabel: UILabel!
     @IBOutlet weak var secondUPCLabel: UILabel!
+    @IBOutlet weak var submitButton: RaisedButton!
     
     // Headers used for the HTTP requests.
     let headers = [
@@ -54,6 +55,10 @@ class ScannerInputViewController: UIViewController {
             secondUPCLabel.text = "Second UPC #"
         }
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ScannerInputViewController.textChanged(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
+        submitButton.backgroundColor = UIColor.grayColor()
+        submitButton.enabled = false
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,6 +70,17 @@ class ScannerInputViewController: UIViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
+    
+    
+    func textChanged(sender: NSNotification) {
+        if firstUPCStringNoZero.isEmpty == false && secondUPCStringNoZero.isEmpty == false && employeeNumber.hasText() && notesInput.hasText() {
+            submitButton.enabled = true
+            submitButton.backgroundColor = UIColor(red: 0.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+        } else {
+            submitButton.enabled = false
+        }
+    }
+    
     
     @IBAction func scanFirstUPC() {
         // Do whatever it takes to scan a UPC/barcode.

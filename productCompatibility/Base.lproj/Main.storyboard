@@ -352,13 +352,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First UPC #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDo-UN-Bh7">
                                 <rect key="frame" x="20" y="137" width="85.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second UPC #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaD-Nu-ffT">
                                 <rect key="frame" x="20" y="224" width="111" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -398,6 +398,7 @@
                         <outlet property="notesInput" destination="qN3-0B-Ztm" id="9z4-dD-TU8"/>
                         <outlet property="relationshipType" destination="GI3-OS-ZoB" id="s92-O9-ksk"/>
                         <outlet property="secondUPCLabel" destination="TaD-Nu-ffT" id="U3L-sp-7qA"/>
+                        <outlet property="submitButton" destination="rCc-2G-6pL" id="zu5-kR-WSp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85E-9J-R6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -448,38 +449,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXc-CS-nmr" customClass="RaisedButton" customModule="Material">
-                                        <rect key="frame" x="218" y="373" width="164" height="47"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="164" id="oaE-6S-L4X"/>
-                                            <constraint firstAttribute="height" constant="47" id="ri3-OV-wAp"/>
-                                        </constraints>
-                                        <state key="normal" title="Submit">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="pulseColor">
-                                                <color key="value" red="1" green="0.95604598070106872" blue="0.10340030917700882" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                                <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="0.0" height="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadowPathAutoSizeEnabled" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="createManualRelationship" destination="BYZ-38-t0r" eventType="touchUpInside" id="jE6-eh-xa9"/>
-                                            <segue destination="TVt-0D-bHH" kind="show" id="c7S-0a-eod"/>
-                                        </connections>
-                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="38O-Sp-UAJ" customClass="TextField" customModule="Material">
                                         <rect key="frame" x="8" y="171" width="584" height="32"/>
                                         <constraints>
@@ -590,6 +559,38 @@
                                         <rect key="frame" x="276" y="296" width="51" height="31"/>
                                         <color key="onTintColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                     </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXc-CS-nmr" customClass="RaisedButton" customModule="Material">
+                                        <rect key="frame" x="218" y="373" width="164" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="164" id="oaE-6S-L4X"/>
+                                            <constraint firstAttribute="height" constant="47" id="ri3-OV-wAp"/>
+                                        </constraints>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="pulseColor">
+                                                <color key="value" red="1" green="0.95604598070106872" blue="0.10340030917700882" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadowPathAutoSizeEnabled" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="createManualRelationship" destination="BYZ-38-t0r" eventType="touchUpInside" id="jE6-eh-xa9"/>
+                                            <segue destination="TVt-0D-bHH" kind="show" id="c7S-0a-eod"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -633,6 +634,7 @@
                         <outlet property="notesInput" destination="j6b-CO-lCR" id="NMf-Qu-tIH"/>
                         <outlet property="relationshipType" destination="FeH-VO-LYZ" id="0lh-IW-7Xq"/>
                         <outlet property="secondSKUnumber" destination="c9x-hC-Vuc" id="eJ1-uQ-Tqt"/>
+                        <outlet property="submitButton" destination="UXc-CS-nmr" id="5ZL-N8-Snn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -658,7 +660,7 @@
                                     <constraint firstAttribute="height" constant="35" id="vRy-MI-6Ho"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="greenmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="E8M-Ek-sVw">

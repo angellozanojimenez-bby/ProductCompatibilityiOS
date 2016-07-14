@@ -17,6 +17,8 @@ class ManualInputViewController: UIViewController {
     @IBOutlet var notesInput: TextField!
     @IBOutlet var employeeNumber: TextField!
     @IBOutlet var relationshipType: UISwitch!
+    @IBOutlet weak var submitButton: RaisedButton!
+    
     var BBYAPI = BBYAPIController()
     
     // Headers used for the HTTP requests.
@@ -31,6 +33,16 @@ class ManualInputViewController: UIViewController {
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ManualInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        
+        print("First SKU Number: " + firstSKUnumber.text!)
+        print("Second SKU Number: " + secondSKUnumber.text!)
+        print("Notes Input: " + notesInput.text!)
+        print("Employee #: " + employeeNumber.text!)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ManualInputViewController.textChanged(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
+        submitButton.backgroundColor = UIColor.grayColor()
+        submitButton.enabled = false
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +54,15 @@ class ManualInputViewController: UIViewController {
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    func textChanged(sender: NSNotification) {
+        if firstSKUnumber.hasText() && secondSKUnumber.hasText() && employeeNumber.hasText() && notesInput.hasText() {
+            submitButton.enabled = true
+            submitButton.backgroundColor = UIColor(red: 0.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+        } else {
+            submitButton.enabled = false
+        }
     }
     
     @IBAction func createManualRelationship() {
