@@ -10,6 +10,7 @@ import UIKit
 
 class InputSelectionViewController: UIViewController {
 
+    @IBOutlet weak var inputSKU: TextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +25,10 @@ class InputSelectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func searchCompatibleProducts() {
+    
+    }
+    
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
         
     }
@@ -32,6 +37,16 @@ class InputSelectionViewController: UIViewController {
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toProductTableView" {
+            let destinationController = segue.destinationViewController as! CompatibleProductsTableViewController
+            if let sku = inputSKU.text {
+                destinationController.skuPassedByMainMenu = sku
+                print(destinationController.skuPassedByMainMenu)
+            }
+        }
     }
 
     /*
