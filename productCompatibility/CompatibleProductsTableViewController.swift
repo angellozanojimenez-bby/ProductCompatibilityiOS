@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class CompatibleProductsTableViewController: UITableViewController {
 
     var skuPassedByMainMenu: String?
+    var json = []
+    // Headers used for the HTTP requests.
+    let headers = [
+        "Accept": "application/vnd.productcompatibility.v1",
+        "ContentType": "application/json"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,8 +28,15 @@ class CompatibleProductsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        print("SKU string passed from MM: " + skuPassedByMainMenu)
+        print("SKU string passed from MM: " + skuPassedByMainMenu!)
+        Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/product_relationships/\(skuPassedByMainMenu!)", headers: headers)
+            .responseJSON { response in
+            let swiftyJsonVar = JSON(response.result.value!)
+            print(swiftyJsonVar)
+        }
+
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

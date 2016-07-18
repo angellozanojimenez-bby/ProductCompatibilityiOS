@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Material
 
 class InputSelectionViewController: UIViewController {
 
-    @IBOutlet weak var inputSKU: TextField!
+    @IBOutlet var inputSKU: TextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 

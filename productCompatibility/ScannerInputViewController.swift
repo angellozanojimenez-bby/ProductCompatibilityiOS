@@ -58,6 +58,7 @@ class ScannerInputViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ScannerInputViewController.textChanged(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
         submitButton.backgroundColor = UIColor.grayColor()
         submitButton.enabled = false
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
     }
     
