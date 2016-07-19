@@ -7,8 +7,8 @@ target 'productCompatibility' do
 
   # Pods for productCompatibility
   pod 'Alamofire', '~> 3.4'
+  pod 'Alamofire-Synchronous', '~> 3.0'
   pod 'SwiftyJSON'
   pod 'Material', '~> 1.0'
-  pod 'SwiftyJSON'
 
 end

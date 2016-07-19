@@ -12,8 +12,14 @@ import SwiftyJSON
 
 class CompatibleProductsTableViewController: UITableViewController {
 
+    // Attributes for the Product Cell.
+    
     var skuPassedByMainMenu: String?
-    var json = []
+    var localArrayOfProductArrays: [[JSON]] = []
+    var swiftyJsonVar: JSON?
+    var arrayOfSecondarySKUsAndUPCs: [String]!
+    var arrayOfJSONEntries: [JSON] = []
+    
     // Headers used for the HTTP requests.
     let headers = [
         "Accept": "application/vnd.productcompatibility.v1",
@@ -22,48 +28,45 @@ class CompatibleProductsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        print("Count: \(self.localArrayOfProductArrays.count)")
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        print("SKU string passed from MM: " + skuPassedByMainMenu!)
-        Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/product_relationships/\(skuPassedByMainMenu!)", headers: headers)
-            .responseJSON { response in
-            let swiftyJsonVar = JSON(response.result.value!)
-            print(swiftyJsonVar)
-        }
-
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        // print("Entering didReceiveMemoryWarning.")
+        // print("Leaving didReceiveMemoryWarning.")
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        // print("Entering numberOfSectionsInTableView.")
+        // print("Leaving numberOfSectionsInTableView.")
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        // print("Entering tableView.")
+        // print("Leaving tableView.")
+        return 10
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("productCell", forIndexPath: indexPath)
         // Configure the cell...
-
+        // print("Entering tableView2.")
+        // print("Leaving tableView2.")
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
