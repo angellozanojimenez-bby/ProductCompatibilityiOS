@@ -10,5 +10,5 @@ target 'productCompatibility' do
   pod 'Alamofire-Synchronous', '~> 3.0'
   pod 'SwiftyJSON'
   pod 'Material', '~> 1.0'
-
+  
 end

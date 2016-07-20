@@ -20,6 +20,8 @@ class CompatibleProductsTableViewController: UITableViewController {
     var arrayOfSecondarySKUsAndUPCs: [String]!
     var arrayOfJSONEntries: [JSON] = []
     
+    @IBOutlet weak var productImage: UIImageView!
+    
     // Headers used for the HTTP requests.
     let headers = [
         "Accept": "application/vnd.productcompatibility.v1",
@@ -33,6 +35,9 @@ class CompatibleProductsTableViewController: UITableViewController {
         print("Count: \(self.localArrayOfProductArrays.count)")
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tableView.estimatedRowHeight = 36.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.allowsSelection = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,18 +60,33 @@ class CompatibleProductsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         // print("Entering tableView.")
         // print("Leaving tableView.")
-        return 10
+        return self.localArrayOfProductArrays.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("productCell", forIndexPath: indexPath)
+        
+        let cellIdentifier = "productCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ProductTableViewCell
         // Configure the cell...
-        // print("Entering tableView2.")
-        // print("Leaving tableView2.")
+//        let url = NSURL(string: String(localArrayOfProductArrays[indexPath.row][4]))
+//        let data = NSData(contentsOfURL: url!)
+//        cell.productImage.image = UIImage(data: data!)
+//        print("Image: \(url!)")
+
+        if let url = NSURL(string: String(localArrayOfProductArrays[indexPath.row][4])), data = NSData(contentsOfURL: url) {
+            cell.productImage.image = UIImage(data: data)
+            print("Image: \(url)")
+        } else {
+            cell.productImage.image = UIImage(named: "Icon-60.png")
+        }
+        cell.nameLabel.text = String(localArrayOfProductArrays[indexPath.row][0])
+        cell.skuLabel.text = String(localArrayOfProductArrays[indexPath.row][1])
+        cell.manufacturerLabel.text = String(localArrayOfProductArrays[indexPath.row][2])
+        cell.priceLabel.text = String(localArrayOfProductArrays[indexPath.row][3])
+        
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.

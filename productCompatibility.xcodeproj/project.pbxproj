@@ -17,8 +17,10 @@
 		C368518E1D26E94000F4DC2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C368518C1D26E94000F4DC2C /* Main.storyboard */; };
 		C36851901D26E94000F4DC2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C368518F1D26E94000F4DC2C /* Assets.xcassets */; };
 		C36851931D26E94000F4DC2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C36851911D26E94000F4DC2C /* LaunchScreen.storyboard */; };
+		C373D2D81D3FEC49006C03B7 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373D2D71D3FEC49006C03B7 /* ProductTableViewCell.swift */; };
 		C384E3F01D2702400036B972 /* bby.png in Resources */ = {isa = PBXBuildFile; fileRef = C384E3EF1D2702400036B972 /* bby.png */; };
 		C384E3F31D2704D00036B972 /* greenmark.png in Resources */ = {isa = PBXBuildFile; fileRef = C384E3F21D2704D00036B972 /* greenmark.png */; };
+		C3A682D01D401C2500665A78 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A682CF1D401C2500665A78 /* Icon-60.png */; };
 		C3C02B7A1D38132D007A8210 /* CompatibleProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C02B791D38132D007A8210 /* CompatibleProductsTableViewController.swift */; };
 		C3C08D9D1D2EE34B006F8E73 /* ScannerInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C08D9C1D2EE34B006F8E73 /* ScannerInputViewController.swift */; };
 		C3D089401D2D830F009533BB /* BBYAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D0893F1D2D830F009533BB /* BBYAPIController.swift */; };
@@ -39,8 +41,10 @@
 		C368518F1D26E94000F4DC2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C36851921D26E94000F4DC2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C36851941D26E94000F4DC2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C373D2D71D3FEC49006C03B7 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		C384E3EF1D2702400036B972 /* bby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bby.png; sourceTree = "<group>"; };
 		C384E3F21D2704D00036B972 /* greenmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenmark.png; sourceTree = "<group>"; };
+		C3A682CF1D401C2500665A78 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		C3C02B791D38132D007A8210 /* CompatibleProductsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleProductsTableViewController.swift; sourceTree = "<group>"; };
 		C3C08D9C1D2EE34B006F8E73 /* ScannerInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerInputViewController.swift; sourceTree = "<group>"; };
 		C3D0893F1D2D830F009533BB /* BBYAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBYAPIController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 				C31C5C531D35A21B007CDF38 /* ThankYouViewController.swift */,
 				C31C5C551D35A295007CDF38 /* InputSelectionViewController.swift */,
 				C3C02B791D38132D007A8210 /* CompatibleProductsTableViewController.swift */,
+				C373D2D71D3FEC49006C03B7 /* ProductTableViewCell.swift */,
 				C368518C1D26E94000F4DC2C /* Main.storyboard */,
 				C384E3F11D2702520036B972 /* Images */,
 				C368518F1D26E94000F4DC2C /* Assets.xcassets */,
@@ -117,6 +122,7 @@
 		C384E3F11D2702520036B972 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C3A682CF1D401C2500665A78 /* Icon-60.png */,
 				C384E3F21D2704D00036B972 /* greenmark.png */,
 				C384E3EF1D2702400036B972 /* bby.png */,
 			);
@@ -187,6 +193,7 @@
 			files = (
 				C36851931D26E94000F4DC2C /* LaunchScreen.storyboard in Resources */,
 				C384E3F01D2702400036B972 /* bby.png in Resources */,
+				C3A682D01D401C2500665A78 /* Icon-60.png in Resources */,
 				C36851901D26E94000F4DC2C /* Assets.xcassets in Resources */,
 				C384E3F31D2704D00036B972 /* greenmark.png in Resources */,
 				C368518E1D26E94000F4DC2C /* Main.storyboard in Resources */,
@@ -255,6 +262,7 @@
 				C3C08D9D1D2EE34B006F8E73 /* ScannerInputViewController.swift in Sources */,
 				C31C5C541D35A21B007CDF38 /* ThankYouViewController.swift in Sources */,
 				C36851891D26E94000F4DC2C /* AppDelegate.swift in Sources */,
+				C373D2D81D3FEC49006C03B7 /* ProductTableViewCell.swift in Sources */,
 				C3D089401D2D830F009533BB /* BBYAPIController.swift in Sources */,
 				C31C5C521D359AE4007CDF38 /* SecondScannerViewController.swift in Sources */,
 			);

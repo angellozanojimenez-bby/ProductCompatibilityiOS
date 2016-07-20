@@ -69,15 +69,15 @@ class InputSelectionViewController: UIViewController {
                 let productsJSON = JSON(json)
                 for i in 0 ..< productsJSON["products"].count {
                     let productName = productsJSON["products"][i]["name"]
-                    print("Product Name: \(productName)")
+                    //print("Product Name: \(productName)")
                     let productSKU = productsJSON["products"][i]["sku"]
-                    print("Product SKU: \(productSKU)")
+                    //print("Product SKU: \(productSKU)")
                     let productManufacturer = productsJSON["products"][i]["manufacturer"]
-                    print("Product Manufacturer: \(productManufacturer)")
+                    //print("Product Manufacturer: \(productManufacturer)")
                     let productSalePrice = productsJSON["products"][i]["salePrice"]
-                    print("Product Sale Price: \(productSalePrice)")
+                    //print("Product Sale Price: \(productSalePrice)")
                     let productImage = productsJSON["products"][i]["image"]
-                    print("Product Image: \(productImage)")
+                    //print("Product Image: \(productImage)")
                     self.arrayOfProductArrays.append([productName, productSKU, productManufacturer, productSalePrice, productImage])
                 }
             }
