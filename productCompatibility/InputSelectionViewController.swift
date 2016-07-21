@@ -33,6 +33,7 @@ class InputSelectionViewController: UIViewController {
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ManualInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +65,7 @@ class InputSelectionViewController: UIViewController {
                 }
             }
             
-            let secondResponse = Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(\(totalSKUString))?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=name.asc&show=name,sku,manufacturer,salePrice,image&format=json").responseJSON()
+            let secondResponse = Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(\(totalSKUString))?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=name.asc&show=name,sku,manufacturer,salePrice,thumbnailImage&format=json").responseJSON()
             if let json = secondResponse.result.value {
                 let productsJSON = JSON(json)
                 for i in 0 ..< productsJSON["products"].count {
@@ -76,7 +77,7 @@ class InputSelectionViewController: UIViewController {
                     //print("Product Manufacturer: \(productManufacturer)")
                     let productSalePrice = productsJSON["products"][i]["salePrice"]
                     //print("Product Sale Price: \(productSalePrice)")
-                    let productImage = productsJSON["products"][i]["image"]
+                    let productImage = productsJSON["products"][i]["thumbnailImage"]
                     //print("Product Image: \(productImage)")
                     self.arrayOfProductArrays.append([productName, productSKU, productManufacturer, productSalePrice, productImage])
                 }

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Kingfisher
 
 class CompatibleProductsTableViewController: UITableViewController {
 
@@ -38,13 +39,20 @@ class CompatibleProductsTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
+        tableView.reloadData()
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(CompatibleProductsTableViewController.returnToHomeScreen)), animated: true)
+    }
+    
+    func returnToHomeScreen() {
+        performSegueWithIdentifier("returnToHome", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         // print("Entering didReceiveMemoryWarning.")
-        // print("Leaving didReceiveMemoryWarning.")
+        print("Leaving didReceiveMemoryWarning.")
     }
 
     // MARK: - Table view data source
@@ -52,14 +60,14 @@ class CompatibleProductsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         // print("Entering numberOfSectionsInTableView.")
-        // print("Leaving numberOfSectionsInTableView.")
+        print("Leaving numberOfSectionsInTableView.")
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         // print("Entering tableView.")
-        // print("Leaving tableView.")
+        print("Leaving tableView.")
         return self.localArrayOfProductArrays.count
     }
 
@@ -68,23 +76,37 @@ class CompatibleProductsTableViewController: UITableViewController {
         
         let cellIdentifier = "productCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ProductTableViewCell
+        
         // Configure the cell...
-//        let url = NSURL(string: String(localArrayOfProductArrays[indexPath.row][4]))
-//        let data = NSData(contentsOfURL: url!)
-//        cell.productImage.image = UIImage(data: data!)
-//        print("Image: \(url!)")
+        let url = NSURL(string: String(localArrayOfProductArrays[indexPath.row][4]))
+        let data = NSData(contentsOfURL: url!)
+        cell.productImage.image = UIImage(data: data!)
 
-        if let url = NSURL(string: String(localArrayOfProductArrays[indexPath.row][4])), data = NSData(contentsOfURL: url) {
-            cell.productImage.image = UIImage(data: data)
-            print("Image: \(url)")
-        } else {
+        cell.nameLabel.text = String(localArrayOfProductArrays[indexPath.row][0])
+        if cell.nameLabel.text == nil {
+            print("Name Label was not set.")
+        }
+        
+        cell.skuLabel.text = String(localArrayOfProductArrays[indexPath.row][1])
+        if cell.skuLabel.text == nil {
+            print("SKU Label was not set.")
+        }
+        
+        cell.manufacturerLabel.text = String(localArrayOfProductArrays[indexPath.row][2])
+        if cell.manufacturerLabel.text == nil {
+            print("Manufacturer Label was not set.")
+        }
+        
+        cell.priceLabel.text = String(localArrayOfProductArrays[indexPath.row][3])
+        if cell.priceLabel.text == nil {
+            print("Price Label was not set.")
+        }
+        
+        if cell.productImage.image == nil {
+            print("We are about to end and no image has been set.")
             cell.productImage.image = UIImage(named: "Icon-60.png")
         }
-        cell.nameLabel.text = String(localArrayOfProductArrays[indexPath.row][0])
-        cell.skuLabel.text = String(localArrayOfProductArrays[indexPath.row][1])
-        cell.manufacturerLabel.text = String(localArrayOfProductArrays[indexPath.row][2])
-        cell.priceLabel.text = String(localArrayOfProductArrays[indexPath.row][3])
-        
+
         return cell
     }
 

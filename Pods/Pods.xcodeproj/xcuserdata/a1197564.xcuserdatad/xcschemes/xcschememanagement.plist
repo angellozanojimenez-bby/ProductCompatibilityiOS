@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Material-io.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6F9033902DE6419DC263CB95A57A149F</key>
+		<key>246CB4318F75F4990EAE89DFDAFBB4F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8193134047DC36BC04F22E63D103D455</key>
+		<key>E96E13C4D3B5B5FC0651440734C2BF4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>ED4337B1B6E594133A328DEA9437A9A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F460EE9F9F4740E59A92B6A0E04F107D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

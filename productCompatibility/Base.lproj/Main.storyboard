@@ -299,10 +299,13 @@
                             <outlet property="delegate" destination="dTs-bu-o2p" id="Q7h-9Q-ad8"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="uph-SG-Cci" kind="show" identifier="returnToHome" id="v92-wz-3Lx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VlE-GJ-gsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="1739"/>
+            <point key="canvasLocation" x="175" y="1729"/>
         </scene>
         <!--First Scanner View Controller-->
         <scene sceneID="F2I-wl-vwf">
@@ -937,6 +940,7 @@
         <image name="greenmark.png" width="800" height="800"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="v92-wz-3Lx"/>
         <segue reference="2aR-B9-biC"/>
         <segue reference="c7S-0a-eod"/>
     </inferredMetricsTieBreakers>
