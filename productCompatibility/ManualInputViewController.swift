@@ -91,8 +91,8 @@ class ManualInputViewController: UIViewController {
             // We create the parameters that are going to be passed into the HTTP POST method.
             let parameters = [
                 "relationships": [
-                    "primary_node_sku_or_upc":"\(firstSKU)",
-                    "secondary_node_sku_or_upc":"\(secondSKU)",
+                    "primary_node_sku":"\(firstSKU)",
+                    "secondary_node_sku":"\(secondSKU)",
                     "employee_number":"\(employeeNumber)",
                     "notes":"\(notes)"
                 ]
@@ -100,8 +100,8 @@ class ManualInputViewController: UIViewController {
 
             let incompatible_parameters = [
                 "incompatible_relationships": [
-                    "primary_node_sku_or_upc":"\(firstSKU)",
-                    "secondary_node_sku_or_upc":"\(secondSKU)",
+                    "primary_node_sku":"\(firstSKU)",
+                    "secondary_node_sku":"\(secondSKU)",
                     "employee_number":"\(employeeNumber)",
                     "notes":"\(notes)"
                 ]

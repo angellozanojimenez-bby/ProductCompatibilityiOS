@@ -17,8 +17,6 @@ class CompatibleProductsTableViewController: UITableViewController {
     
     var skuPassedByMainMenu: String?
     var localArrayOfProductArrays: [[JSON]] = []
-    var swiftyJsonVar: JSON?
-    var arrayOfSecondarySKUsAndUPCs: [String]!
     var arrayOfJSONEntries: [JSON] = []
     
     @IBOutlet weak var productImage: UIImageView!
@@ -39,9 +37,10 @@ class CompatibleProductsTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.allowsSelection = false
-        tableView.reloadData()
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(CompatibleProductsTableViewController.returnToHomeScreen)), animated: true)
+        print("Count: \(self.localArrayOfProductArrays.count)")
+        title = "Compatible Products"
     }
     
     func returnToHomeScreen() {

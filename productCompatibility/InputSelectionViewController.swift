@@ -15,10 +15,14 @@ import SwiftyJSON
 class InputSelectionViewController: UIViewController {
 
     @IBOutlet var inputSKU: TextField!
-    var swiftyJsonVar: JSON?
-    var arrayOfSecondarySKUsAndUPCs: [String]!
+    
+    // For secondary node skus from Rails API.
     var arrayOfJSONEntries: [JSON] = []
-    var arrayOfProductArrays: [[JSON]] = []
+    var secondArrayOfJSONEntries: [JSON] = []
+    
+    // For product info from BBY API.
+    var arrayOfCompatibleProductArrays: [[JSON]] = []
+    var arrayOfIncompatibleProductArrays: [[JSON]] = []
     
     // Headers used for the HTTP requests.
     let headers = [
@@ -46,27 +50,51 @@ class InputSelectionViewController: UIViewController {
         if let sku = inputSKU.text {
             
             // Rails API call to obtain the relationships that have been created.
-            let response = Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/product_relationships/\(sku)", headers: headers).responseJSON()
+            let response = Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/compatible_product_relationships/\(sku)", headers: headers).responseJSON()
             if let json = response.result.value {
                 let swiftyJSON = JSON(json)
                 for i in 0 ..< swiftyJSON.count {
                     let relationship = swiftyJSON[i]
-                    self.arrayOfJSONEntries.append(relationship["relationships"]["secondary_node_sku_or_upc"])
+                    self.arrayOfJSONEntries.append(relationship["relationships"]["secondary_node_sku"])
+                    print("Compatible Secondary SKU: \(relationship["relationships"]["secondary_node_sku"])")
+                }
+            }
+
+            let incompatibleResponse = Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/incompatible_product_relationships/\(sku)", headers: headers).responseJSON()
+            if let json = incompatibleResponse.result.value {
+                let swiftyJSON = JSON(json)
+                for i in 0 ..< swiftyJSON.count {
+                    let relationship = swiftyJSON[i]
+                    self.secondArrayOfJSONEntries.append(relationship["incompatible_relationships"]["secondary_node_sku"])
+                    print("Incompatible Secondary SKU: \(relationship["incompatible_relationships"]["secondary_node_sku"])")
                 }
             }
             
             // String manipulation to create the query for the BBY API.
-            var totalSKUString: String = ""
+            var totalCompatibleSKUString: String = ""
             for entry in self.arrayOfJSONEntries {
                 if entry == self.arrayOfJSONEntries[self.arrayOfJSONEntries.count-1] {
-                    totalSKUString += "sku=\(entry)"
+                    totalCompatibleSKUString += "sku=\(entry)"
                 } else {
-                    totalSKUString += "sku=\(entry)%7C"
+                    totalCompatibleSKUString += "sku=\(entry)%7C"
                 }
             }
             
-            let secondResponse = Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(\(totalSKUString))?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=name.asc&show=name,sku,manufacturer,salePrice,thumbnailImage&format=json").responseJSON()
-            if let json = secondResponse.result.value {
+            var totalIncompatibleSKUString: String = ""
+            for entry in self.secondArrayOfJSONEntries {
+                if entry == self.secondArrayOfJSONEntries[self.arrayOfJSONEntries.count-1] {
+                    totalIncompatibleSKUString += "sku=\(entry)"
+                } else {
+                    totalIncompatibleSKUString += "sku=\(entry)%7C"
+                }
+            }
+            
+            print("Total SKU String of Compatible Products: \(totalCompatibleSKUString)")
+            print("Total SKU String of Incompatible Products: \(totalIncompatibleSKUString)")
+            
+            // We pull from the BBY API to get the most updated picture, price and name?
+            let compatibleProductResponse = Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(\(totalCompatibleSKUString))?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=name.asc&show=name,sku,manufacturer,salePrice,thumbnailImage&format=json").responseJSON()
+            if let json = compatibleProductResponse.result.value {
                 let productsJSON = JSON(json)
                 for i in 0 ..< productsJSON["products"].count {
                     let productName = productsJSON["products"][i]["name"]
@@ -79,7 +107,21 @@ class InputSelectionViewController: UIViewController {
                     //print("Product Sale Price: \(productSalePrice)")
                     let productImage = productsJSON["products"][i]["thumbnailImage"]
                     //print("Product Image: \(productImage)")
-                    self.arrayOfProductArrays.append([productName, productSKU, productManufacturer, productSalePrice, productImage])
+                    self.arrayOfCompatibleProductArrays.append([productName, productSKU, productManufacturer, productSalePrice, productImage])
+                }
+            }
+            
+            let incompatibleProductResponse = Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(\(totalIncompatibleSKUString))?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=name.asc&show=name,sku,manufacturer,salePrice,thumbnailImage&format=json").responseJSON()
+            if let json = incompatibleProductResponse.result.value {
+                let productsJSON = JSON(json)
+                for i in 0 ..< productsJSON["products"].count {
+                    let productName = productsJSON["products"][i]["name"]
+                    let productSKU = productsJSON["products"][i]["sku"]
+                    let productManufacturer = productsJSON["products"][i]["manufacturer"]
+                    let productSalePrice = productsJSON["products"][i]["salePrice"]
+                    let productImage = productsJSON["products"][i]["thumbnailImage"]
+                    self.arrayOfIncompatibleProductArrays.append([productName, productSKU, productManufacturer, productSalePrice, productImage])
+
                 }
             }
         }
@@ -98,15 +140,16 @@ class InputSelectionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
         searchCompatibleProducts()
-        if segue.identifier == "toProductTableView" {
+        if segue.identifier == "toProductTableViews" {
             
-            let destinationController = segue.destinationViewController as! CompatibleProductsTableViewController
-
+            let tabBarController = segue.destinationViewController as! UITabBarController
+            let destinationViewControllerOne = tabBarController.viewControllers![0] as! CompatibleProductsViewController
+            let destinationViewControllerTwo = tabBarController.viewControllers![1] as! IncompatibleProductsViewController
+            
             if let sku = inputSKU.text {
-                
-                destinationController.skuPassedByMainMenu = sku
-                destinationController.localArrayOfProductArrays = self.arrayOfProductArrays
-                
+                print("SKU: \(sku)")
+                destinationViewControllerOne.localArrayOfProductArrays = self.arrayOfCompatibleProductArrays
+                destinationViewControllerTwo.localArrayOfProductArrays = self.arrayOfIncompatibleProductArrays
             }
         }
     }

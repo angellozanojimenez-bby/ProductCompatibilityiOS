@@ -27,6 +27,10 @@
 		C3C02B7A1D38132D007A8210 /* CompatibleProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C02B791D38132D007A8210 /* CompatibleProductsTableViewController.swift */; };
 		C3C08D9D1D2EE34B006F8E73 /* ScannerInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C08D9C1D2EE34B006F8E73 /* ScannerInputViewController.swift */; };
 		C3D089401D2D830F009533BB /* BBYAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D0893F1D2D830F009533BB /* BBYAPIController.swift */; };
+		C3D379E41D42946E00561790 /* CompatibleProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D379E31D42946E00561790 /* CompatibleProductsViewController.swift */; };
+		C3D379E61D4294AD00561790 /* IncompatibleProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D379E51D4294AD00561790 /* IncompatibleProductsViewController.swift */; };
+		C3D379EC1D4297F300561790 /* ic_check_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D379EB1D4297F300561790 /* ic_check_black_24dp.png */; };
+		C3D379EE1D42983D00561790 /* ic_close_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D379ED1D42983D00561790 /* ic_close_black.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		C3C02B791D38132D007A8210 /* CompatibleProductsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleProductsTableViewController.swift; sourceTree = "<group>"; };
 		C3C08D9C1D2EE34B006F8E73 /* ScannerInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerInputViewController.swift; sourceTree = "<group>"; };
 		C3D0893F1D2D830F009533BB /* BBYAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBYAPIController.swift; sourceTree = "<group>"; };
+		C3D379E31D42946E00561790 /* CompatibleProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleProductsViewController.swift; sourceTree = "<group>"; };
+		C3D379E51D4294AD00561790 /* IncompatibleProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncompatibleProductsViewController.swift; sourceTree = "<group>"; };
+		C3D379EB1D4297F300561790 /* ic_check_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_check_black_24dp.png; sourceTree = "<group>"; };
+		C3D379ED1D42983D00561790 /* ic_close_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_black.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,8 @@
 				C31C5C551D35A295007CDF38 /* InputSelectionViewController.swift */,
 				C3C02B791D38132D007A8210 /* CompatibleProductsTableViewController.swift */,
 				C373D2D71D3FEC49006C03B7 /* ProductTableViewCell.swift */,
+				C3D379E31D42946E00561790 /* CompatibleProductsViewController.swift */,
+				C3D379E51D4294AD00561790 /* IncompatibleProductsViewController.swift */,
 				C368518C1D26E94000F4DC2C /* Main.storyboard */,
 				C384E3F11D2702520036B972 /* Images */,
 				C368518F1D26E94000F4DC2C /* Assets.xcassets */,
@@ -129,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				C3A682CF1D401C2500665A78 /* Icon-60.png */,
+				C3D379EB1D4297F300561790 /* ic_check_black_24dp.png */,
+				C3D379ED1D42983D00561790 /* ic_close_black.png */,
 				C35CDC961D41282300524CBC /* iTunesArtwork@2x.png */,
 				C35CDC901D40315200524CBC /* 4447800_sa.jpg */,
 				C35CDC921D40328600524CBC /* 4447800_s.gif */,
@@ -202,10 +214,12 @@
 			files = (
 				C35CDC911D40315200524CBC /* 4447800_sa.jpg in Resources */,
 				C36851931D26E94000F4DC2C /* LaunchScreen.storyboard in Resources */,
+				C3D379EE1D42983D00561790 /* ic_close_black.png in Resources */,
 				C384E3F01D2702400036B972 /* bby.png in Resources */,
 				C3A682D01D401C2500665A78 /* Icon-60.png in Resources */,
 				C35CDC971D41282300524CBC /* iTunesArtwork@2x.png in Resources */,
 				C36851901D26E94000F4DC2C /* Assets.xcassets in Resources */,
+				C3D379EC1D4297F300561790 /* ic_check_black_24dp.png in Resources */,
 				C384E3F31D2704D00036B972 /* greenmark.png in Resources */,
 				C35CDC931D40328600524CBC /* 4447800_s.gif in Resources */,
 				C368518E1D26E94000F4DC2C /* Main.storyboard in Resources */,
@@ -272,9 +286,11 @@
 				C31C5C561D35A295007CDF38 /* InputSelectionViewController.swift in Sources */,
 				C3C02B7A1D38132D007A8210 /* CompatibleProductsTableViewController.swift in Sources */,
 				C3C08D9D1D2EE34B006F8E73 /* ScannerInputViewController.swift in Sources */,
+				C3D379E61D4294AD00561790 /* IncompatibleProductsViewController.swift in Sources */,
 				C31C5C541D35A21B007CDF38 /* ThankYouViewController.swift in Sources */,
 				C36851891D26E94000F4DC2C /* AppDelegate.swift in Sources */,
 				C373D2D81D3FEC49006C03B7 /* ProductTableViewCell.swift in Sources */,
+				C3D379E41D42946E00561790 /* CompatibleProductsViewController.swift in Sources */,
 				C3D089401D2D830F009533BB /* BBYAPIController.swift in Sources */,
 				C31C5C521D359AE4007CDF38 /* SecondScannerViewController.swift in Sources */,
 			);
