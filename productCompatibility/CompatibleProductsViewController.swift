@@ -11,12 +11,15 @@ import SwiftyJSON
 
 class CompatibleProductsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var compatibleProductsTableView: UITableView!
     // Double nested array sent from the Input Selection VC.
     var localArrayOfProductArrays: [[JSON]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Count In Compatible Products: \(self.localArrayOfProductArrays.count)")
+        compatibleProductsTableView.estimatedRowHeight = 40.0
+        compatibleProductsTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,32 +61,3 @@ class CompatibleProductsViewController: UIViewController, UITableViewDataSource,
      */
     
 }
-
-/*
- 
- override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
- 
- let cellIdentifier = "productCell"
- let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ProductTableViewCell
- 
- // Configure the cell...
- let url = NSURL(string: String(localArrayOfProductArrays[indexPath.row][4]))
- let data = NSData(contentsOfURL: url!)
- cell.productImage.image = UIImage(data: data!)
- 
- cell.nameLabel.text = String(localArrayOfProductArrays[indexPath.row][0])
- 
- cell.skuLabel.text = String(localArrayOfProductArrays[indexPath.row][1])
- 
- cell.manufacturerLabel.text = String(localArrayOfProductArrays[indexPath.row][2])
- 
- cell.priceLabel.text = String(localArrayOfProductArrays[indexPath.row][3])
- 
- if cell.productImage.image == nil {
- cell.productImage.image = UIImage(named: "Icon-60.png")
- }
- 
- return cell
- }
- 
- */

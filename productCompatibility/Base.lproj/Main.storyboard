@@ -330,8 +330,12 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fqh-5X-XQ0">
                                                     <rect key="frame" x="8" y="10" width="584" height="80"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ejj-wr-GSC">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ejj-wr-GSC">
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="46W-nJ-TYC"/>
+                                                                <constraint firstAttribute="height" constant="80" id="xnI-7N-9nd"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="OQO-Da-v1B">
                                                             <rect key="frame" x="90" y="0.0" width="494" height="74"/>
@@ -396,6 +400,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Incompatible Products" image="ic_close_black.png" id="IIn-tH-9S3"/>
+                    <connections>
+                        <outlet property="incompatibleProductsTableView" destination="SBk-pw-ha8" id="hIl-sH-fje"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQ1-S2-5fT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -427,8 +434,12 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tMT-bn-DOT">
                                                     <rect key="frame" x="18" y="10" width="578" height="80"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-gg-PvL">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-gg-PvL">
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="80" id="ogr-vw-Xd2"/>
+                                                                <constraint firstAttribute="width" constant="80" id="sX9-WD-JEp"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xul-ab-b9M">
                                                             <rect key="frame" x="90" y="0.0" width="488" height="74"/>
@@ -493,6 +504,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Compatible Products" image="ic_check_black_24dp.png" id="oRc-Th-hSh"/>
+                    <connections>
+                        <outlet property="compatibleProductsTableView" destination="nYs-If-PAG" id="pmq-1W-Z0c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ny-mz-fJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

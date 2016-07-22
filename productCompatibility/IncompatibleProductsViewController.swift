@@ -13,10 +13,14 @@ class IncompatibleProductsViewController: UIViewController, UITableViewDataSourc
 
     // Double nested array sent from the Input Selection VC.
     var localArrayOfProductArrays: [[JSON]] = []
-
+    @IBOutlet weak var incompatibleProductsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Count In Incompatible Products: \(self.localArrayOfProductArrays.count)")
+        incompatibleProductsTableView.estimatedRowHeight = 40.0
+        incompatibleProductsTableView.rowHeight = UITableViewAutomaticDimension
+
     }
 
     override func didReceiveMemoryWarning() {
