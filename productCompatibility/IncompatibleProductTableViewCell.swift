@@ -1,21 +1,20 @@
 //
-//  ProductTableViewCell.swift
+//  IncompatibleProductTableViewCell.swift
 //  productCompatibility
 //
-//  Created by Lozano Jimenez, Angel on 7/20/16.
+//  Created by Lozano Jimenez, Angel on 7/22/16.
 //  Copyright © 2016 Best Buy, Inc. All rights reserved.
 //
 
-// This file is not needed anymore.
 import UIKit
 
-class ProductTableViewCell: UITableViewCell {
+class IncompatibleProductTableViewCell: UITableViewCell {
 
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var skuLabel: UILabel!
-    @IBOutlet var priceLabel: UILabel!
     @IBOutlet var manufacturerLabel: UILabel!
-    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var productImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

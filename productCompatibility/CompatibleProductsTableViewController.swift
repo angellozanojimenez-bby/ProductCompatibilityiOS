@@ -6,6 +6,7 @@
 //  Copyright © 2016 Best Buy, Inc. All rights reserved.
 //
 
+// This file is not needed anymore.
 import UIKit
 import Alamofire
 import SwiftyJSON

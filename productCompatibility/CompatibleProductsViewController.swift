@@ -25,14 +25,24 @@ class CompatibleProductsViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.localArrayOfProductArrays.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // Set up the cell information.
         let cellIdentifier = "compatibleProductCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CompatibleProductTableViewCell
+        
+        // Set up the cell data.
+        cell.nameLabel.text = String(localArrayOfProductArrays[indexPath.row][0])
+        cell.skuLabel.text = String(localArrayOfProductArrays[indexPath.row][1])
+        cell.manufacturerLabel.text = String(localArrayOfProductArrays[indexPath.row][2])
+        cell.priceLabel.text = String(localArrayOfProductArrays[indexPath.row][3])
+
+        let url = NSURL(string: String(localArrayOfProductArrays[indexPath.row][4]))
+        let data = NSData(contentsOfURL: url!)
+        cell.productImage.image = UIImage(data: data!)
         
         return cell
     }
@@ -48,3 +58,32 @@ class CompatibleProductsViewController: UIViewController, UITableViewDataSource,
      */
     
 }
+
+/*
+ 
+ override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+ 
+ let cellIdentifier = "productCell"
+ let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ProductTableViewCell
+ 
+ // Configure the cell...
+ let url = NSURL(string: String(localArrayOfProductArrays[indexPath.row][4]))
+ let data = NSData(contentsOfURL: url!)
+ cell.productImage.image = UIImage(data: data!)
+ 
+ cell.nameLabel.text = String(localArrayOfProductArrays[indexPath.row][0])
+ 
+ cell.skuLabel.text = String(localArrayOfProductArrays[indexPath.row][1])
+ 
+ cell.manufacturerLabel.text = String(localArrayOfProductArrays[indexPath.row][2])
+ 
+ cell.priceLabel.text = String(localArrayOfProductArrays[indexPath.row][3])
+ 
+ if cell.productImage.image == nil {
+ cell.productImage.image = UIImage(named: "Icon-60.png")
+ }
+ 
+ return cell
+ }
+ 
+ */

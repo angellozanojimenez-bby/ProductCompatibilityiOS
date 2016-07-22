@@ -25,14 +25,24 @@ class IncompatibleProductsViewController: UIViewController, UITableViewDataSourc
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.localArrayOfProductArrays.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         // Set up the cell information.
         let cellIdentifier = "incompatibleProductCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! IncompatibleProductTableViewCell
+        
+        // Set up the cell data.
+        cell.nameLabel.text = String(localArrayOfProductArrays[indexPath.row][0])
+        cell.skuLabel.text = String(localArrayOfProductArrays[indexPath.row][1])
+        cell.manufacturerLabel.text = String(localArrayOfProductArrays[indexPath.row][2])
+        cell.priceLabel.text = String(localArrayOfProductArrays[indexPath.row][3])
+        
+        let url = NSURL(string: String(localArrayOfProductArrays[indexPath.row][4]))
+        let data = NSData(contentsOfURL: url!)
+        cell.productImage.image = UIImage(data: data!)
         
         return cell
     }
