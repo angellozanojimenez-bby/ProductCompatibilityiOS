@@ -11,6 +11,7 @@ import Material
 import Alamofire
 import Alamofire_Synchronous
 import SwiftyJSON
+import SwiftSpinner
 
 class InputSelectionViewController: UIViewController {
 
@@ -45,8 +46,8 @@ class InputSelectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func searchCompatibleProducts() {
-
+    @IBAction func searchCompatibleProducts() {
+        SwiftSpinner.show("Loading...")
         if let sku = inputSKU.text {
             
             // Rails API call to obtain the relationships that have been created.
@@ -139,9 +140,8 @@ class InputSelectionViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
-        searchCompatibleProducts()
         if segue.identifier == "toProductTableViews" {
-            
+            searchCompatibleProducts()
             let tabBarController = segue.destinationViewController as! UITabBarController
             let destinationViewControllerOne = tabBarController.viewControllers![0] as! CompatibleProductsViewController
             let destinationViewControllerTwo = tabBarController.viewControllers![1] as! IncompatibleProductsViewController

@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,12 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>246CB4318F75F4990EAE89DFDAFBB4F9</key>
+		<key>4EEDD3EEC53946E375E2D159BD2185B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DB85E5A7A51CA277B691C4A2309A8447</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBDD8FD822E5E4579C6E4F26B8A59791</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -78,11 +93,6 @@
 			<true/>
 		</dict>
 		<key>ED4337B1B6E594133A328DEA9437A9A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F460EE9F9F4740E59A92B6A0E04F107D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

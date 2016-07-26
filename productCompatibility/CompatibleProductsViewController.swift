@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import SwiftSpinner
 
 class CompatibleProductsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -20,6 +21,10 @@ class CompatibleProductsViewController: UIViewController, UITableViewDataSource,
         print("Count In Compatible Products: \(self.localArrayOfProductArrays.count)")
         compatibleProductsTableView.estimatedRowHeight = 40.0
         compatibleProductsTableView.rowHeight = UITableViewAutomaticDimension
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        SwiftSpinner.hide()
     }
     
     override func didReceiveMemoryWarning() {
