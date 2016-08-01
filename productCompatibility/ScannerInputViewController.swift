@@ -141,7 +141,7 @@ class ScannerInputViewController: UIViewController {
                 if relationshipType.on {
                     // Here we create a POST method that takes in our headers and parameters and returns a message whether the method was successful or not.
                     // Note that in this instance, the RelationshipType button is on, meaning that the products work with one another.
-                    Alamofire.request(.POST, "http://api.productcompatibilityapi.dev/relationships/", headers: headers, parameters: parameters)
+                    Alamofire.request(.POST, "http://40.77.61.2:3000/relationships/", headers: headers, parameters: parameters)
                         .validate(statusCode: 200..<300)
                         .responseJSON { response in
                             switch response.result {
@@ -154,7 +154,7 @@ class ScannerInputViewController: UIViewController {
                 } else {
                     // Here we create a POST method that takes in our headers and parameters and returns a message whether the method was successful or not.
                     // Note that in this instance, the RelationshipType button is off, meaning that the products do not work with one another.
-                    Alamofire.request(.POST, "http://api.productcompatibilityapi.dev/incompatible_relationships/", headers: headers, parameters: incompatible_parameters)
+                    Alamofire.request(.POST, "http://40.77.61.2:3000/incompatible_relationships/", headers: headers, parameters: incompatible_parameters)
                         .validate(statusCode: 200..<300)
                         .responseJSON { response in
                             switch response.result {

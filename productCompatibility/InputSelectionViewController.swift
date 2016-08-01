@@ -51,7 +51,7 @@ class InputSelectionViewController: UIViewController {
         if let sku = inputSKU.text {
             
             // Rails API call to obtain the relationships that have been created.
-            let response = Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/compatible_product_relationships/\(sku)", headers: headers).responseJSON()
+            let response = Alamofire.request(.GET, "http://40.77.61.2:3000/compatible_product_relationships/\(sku)", headers: headers).responseJSON()
             if let json = response.result.value {
                 let swiftyJSON = JSON(json)
                 for i in 0 ..< swiftyJSON.count {
@@ -61,7 +61,7 @@ class InputSelectionViewController: UIViewController {
                 }
             }
 
-            let incompatibleResponse = Alamofire.request(.GET, "http://api.productcompatibilityapi.dev/incompatible_product_relationships/\(sku)", headers: headers).responseJSON()
+            let incompatibleResponse = Alamofire.request(.GET, "http://40.77.61.2:3000/incompatible_product_relationships/\(sku)", headers: headers).responseJSON()
             if let json = incompatibleResponse.result.value {
                 let swiftyJSON = JSON(json)
                 for i in 0 ..< swiftyJSON.count {
