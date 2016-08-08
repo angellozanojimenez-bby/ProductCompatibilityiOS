@@ -83,7 +83,7 @@ class InputSelectionViewController: UIViewController {
             
             var totalIncompatibleSKUString: String = ""
             for entry in self.secondArrayOfJSONEntries {
-                if entry == self.secondArrayOfJSONEntries[self.arrayOfJSONEntries.count-1] {
+                if entry == self.secondArrayOfJSONEntries[self.secondArrayOfJSONEntries.count-1] {
                     totalIncompatibleSKUString += "sku=\(entry)"
                 } else {
                     totalIncompatibleSKUString += "sku=\(entry)%7C"

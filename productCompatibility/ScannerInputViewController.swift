@@ -10,6 +10,7 @@ import UIKit
 import Material
 import Alamofire
 import AVFoundation
+import SwiftyJSON
 
 class ScannerInputViewController: UIViewController {
 
@@ -111,29 +112,54 @@ class ScannerInputViewController: UIViewController {
         if self.firstUPCStringNoZero != "" && self.secondUPCStringNoZero != "" {
             if let employeeNumber = employeeNumber.text, let notes = notesInput.text {
                 
+                var firstSKUString: String = ""
+                var secondSKUString: String = ""
+                
+                let firstRequest = Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(upc=\(self.firstUPCStringNoZero))?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=name.asc&show=name,manufacturer,sku,salePrice&format=json").responseJSON()
+                if let json = firstRequest.result.value {
+                    let swiftyJSON = JSON(json)
+                    print(swiftyJSON["products"][0]["sku"])
+                    firstSKUString = String(swiftyJSON["products"][0]["sku"])
+                }
+                let secondRequest = Alamofire.request(.GET, "https://api.bestbuy.com/v1/products(upc=\(self.secondUPCStringNoZero))?apiKey=3nmxuf48rjc2jhxz7cwebcze&sort=name.asc&show=name,manufacturer,sku,salePrice&format=json").responseJSON()
+                if let json = secondRequest.result.value {
+                    let swiftyJSON = JSON(json)
+                    print(swiftyJSON["products"][0]["sku"])
+                    secondSKUString = String(swiftyJSON["products"][0]["sku"])
+                }
+                /*
+                let incompatibleResponse = Alamofire.request(.GET, "http://40.77.61.2:3000/incompatible_product_relationships/\(sku)", headers: headers).responseJSON()
+                if let json = incompatibleResponse.result.value {
+                    let swiftyJSON = JSON(json)
+                    for i in 0 ..< swiftyJSON.count {
+                        let relationship = swiftyJSON[i]
+                        self.secondArrayOfJSONEntries.append(relationship["incompatible_relationships"]["secondary_node_sku"])
+                        print("Incompatible Secondary SKU: \(relationship["incompatible_relationships"]["secondary_node_sku"])")
+                    }
+                } 
+                */
+                
                 let parameters = [
                     "relationships": [
-                        "primary_node_sku_or_upc":"\(self.firstUPCStringNoZero)",
-                        "secondary_node_sku_or_upc":"\(self.secondUPCStringNoZero)", "employee_numbers":"\(employeeNumber)",
+                        "primary_node_sku":"\(firstSKUString)",
+                        "secondary_node_sku":"\(secondSKUString)",
+                        "employee_number":"\(employeeNumber)",
                         "notes":"\(notes)"
-                        
-                    
                     ]
                 ]
                 
                 let incompatible_parameters = [
                     "incompatible_relationships": [
-                        "primary_node_sku_or_upc":"\(self.firstUPCStringNoZero)",
-                        "secondary_node_sku_or_upc":"\(self.secondUPCStringNoZero)", "employee_numbers":"\(employeeNumber)",
+                        "primary_node_sku":"\(firstSKUString)",
+                        "secondary_node_sku":"\(secondSKUString)",
+                        "employee_number":"\(employeeNumber)",
                         "notes":"\(notes)"
-                        
-                        
                     ]
                 ]
                 
                 // Let's check what our parameters are.
-                print("First UPC: " + self.firstUPCStringNoZero)
-                print("Second UPC: " + self.secondUPCStringNoZero)
+                print("First SKU: " + firstSKUString)
+                print("Second SKU: " + secondSKUString)
                 print("Employee #: " + employeeNumber)
                 print("Notes: " + notes)
                 print("Compatible?: " + relationshipType.on.description)

@@ -21,6 +21,7 @@ class CompatibleProductsViewController: UIViewController, UITableViewDataSource,
         print("Count In Compatible Products: \(self.localArrayOfProductArrays.count)")
         compatibleProductsTableView.estimatedRowHeight = 40.0
         compatibleProductsTableView.rowHeight = UITableViewAutomaticDimension
+        self.title = "Compatible Products"
     }
 
     override func viewDidAppear(animated: Bool) {

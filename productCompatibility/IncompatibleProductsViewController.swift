@@ -20,6 +20,7 @@ class IncompatibleProductsViewController: UIViewController, UITableViewDataSourc
         print("Count In Incompatible Products: \(self.localArrayOfProductArrays.count)")
         incompatibleProductsTableView.estimatedRowHeight = 40.0
         incompatibleProductsTableView.rowHeight = UITableViewAutomaticDimension
+        self.title = "Incompatible Products"
 
     }
 
