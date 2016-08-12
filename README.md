@@ -9,12 +9,12 @@ Pod File:
 
 target 'productCompatibility' do
 
-  pod 'Alamofire', '~> 3.4'  
-  pod 'Alamofire-Synchronous', '~> 3.0'  
-  pod 'SwiftyJSON'  
-  pod 'Material', '~> 1.0'  
-  pod 'Kingfisher', '~> 2.4'  
-  pod 'SwiftSpinner'  
+    pod 'Alamofire', '~> 3.4'  
+    pod 'Alamofire-Synchronous', '~> 3.0'  
+    pod 'SwiftyJSON'  
+    pod 'Material', '~> 1.0'  
+    pod 'Kingfisher', '~> 2.4'  
+    pod 'SwiftSpinner'  
   
 end
 
