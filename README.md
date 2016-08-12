@@ -7,8 +7,8 @@ Xcode Version: 7.3.1
 
 Pod File:
 
-target 'productCompatibility' do
-
+ 'target 'productCompatibility' do
+ 
     pod 'Alamofire', '~> 3.4'  
     pod 'Alamofire-Synchronous', '~> 3.0'  
     pod 'SwiftyJSON'  
@@ -16,7 +16,7 @@ target 'productCompatibility' do
     pod 'Kingfisher', '~> 2.4'  
     pod 'SwiftSpinner'  
   
-end
+ end'
 
 The latest version of the application contains the Podfile above. Please update accordingly.
 
