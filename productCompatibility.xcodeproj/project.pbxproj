@@ -45,6 +45,8 @@
 		C3D379F21D42B97E00561790 /* IncompatibleProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D379F11D42B97E00561790 /* IncompatibleProductTableViewCell.swift */; };
 		C3E0BC171D5E31F90091B87A /* Best_buy_logo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E0BC161D5E31F90091B87A /* Best_buy_logo-2.png */; };
 		C3E0BC191D5E334F0091B87A /* gsp-yw-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E0BC181D5E334F0091B87A /* gsp-yw-banner.png */; };
+		C3E0BC1B1D5E517A0091B87A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0BC1A1D5E517A0091B87A /* SignUpViewController.swift */; };
+		C3E0BC1D1D5E518A0091B87A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0BC1C1D5E518A0091B87A /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		C3D379F11D42B97E00561790 /* IncompatibleProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncompatibleProductTableViewCell.swift; sourceTree = "<group>"; };
 		C3E0BC161D5E31F90091B87A /* Best_buy_logo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Best_buy_logo-2.png"; sourceTree = "<group>"; };
 		C3E0BC181D5E334F0091B87A /* gsp-yw-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gsp-yw-banner.png"; sourceTree = "<group>"; };
+		C3E0BC1A1D5E517A0091B87A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		C3E0BC1C1D5E518A0091B87A /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 				C3D379F11D42B97E00561790 /* IncompatibleProductTableViewCell.swift */,
 				C3BE6B711D49269F001AC375 /* LeaderboardTableViewController.swift */,
 				C3BE6B731D495BE5001AC375 /* LeaderboardTableViewCell.swift */,
+				C3E0BC1A1D5E517A0091B87A /* SignUpViewController.swift */,
+				C3E0BC1C1D5E518A0091B87A /* SignInViewController.swift */,
 				C368518C1D26E94000F4DC2C /* Main.storyboard */,
 				C384E3F11D2702520036B972 /* Images */,
 				C368518F1D26E94000F4DC2C /* Assets.xcassets */,
@@ -344,8 +350,10 @@
 				C3BE6B721D49269F001AC375 /* LeaderboardTableViewController.swift in Sources */,
 				C31C5C541D35A21B007CDF38 /* ThankYouViewController.swift in Sources */,
 				C36851891D26E94000F4DC2C /* AppDelegate.swift in Sources */,
+				C3E0BC1B1D5E517A0091B87A /* SignUpViewController.swift in Sources */,
 				C3D379F01D42B93400561790 /* CompatibleProductTableViewCell.swift in Sources */,
 				C3D379E41D42946E00561790 /* CompatibleProductsViewController.swift in Sources */,
+				C3E0BC1D1D5E518A0091B87A /* SignInViewController.swift in Sources */,
 				C3D089401D2D830F009533BB /* BBYAPIController.swift in Sources */,
 				C31C5C521D359AE4007CDF38 /* SecondScannerViewController.swift in Sources */,
 				C3BE6B741D495BE5001AC375 /* LeaderboardTableViewCell.swift in Sources */,

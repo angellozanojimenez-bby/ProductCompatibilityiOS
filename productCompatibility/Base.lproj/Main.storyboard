@@ -1262,10 +1262,10 @@
             </objects>
             <point key="canvasLocation" x="-2530" y="927"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="bJ5-6P-iEg">
             <objects>
-                <viewController id="lgU-Rk-5Om" sceneMemberID="viewController">
+                <viewController id="lgU-Rk-5Om" customClass="SignUpViewController" customModule="productCompatibility" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mmg-5z-odn"/>
                         <viewControllerLayoutGuide type="bottom" id="gfZ-bX-IAJ"/>
@@ -1461,10 +1461,10 @@
             </objects>
             <point key="canvasLocation" x="-1699" y="539"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="U9X-vx-6N2">
             <objects>
-                <viewController id="b6g-Pj-Opp" sceneMemberID="viewController">
+                <viewController id="b6g-Pj-Opp" customClass="SignInViewController" customModule="productCompatibility" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OAr-RT-B2j"/>
                         <viewControllerLayoutGuide type="bottom" id="WlW-Qh-mgp"/>
