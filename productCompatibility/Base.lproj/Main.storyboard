@@ -1456,6 +1456,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="Aeh-C9-jaC" id="a8d-lz-tgu"/>
+                        <outlet property="employeeNumberField" destination="lJQ-hN-UoK" id="xGp-ZS-A63"/>
+                        <outlet property="passwordConfirmationField" destination="s4w-Hp-kGD" id="8JB-Af-1af"/>
+                        <outlet property="passwordField" destination="rYE-Na-4JG" id="wep-X8-lw3"/>
+                        <outlet property="signUpButton" destination="ZYu-uM-6Wm" id="fZc-JR-KcG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXv-P3-l9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1567,6 +1574,11 @@
                             <constraint firstItem="laC-sM-gwR" firstAttribute="top" secondItem="37b-h3-RlW" secondAttribute="bottom" constant="51" id="yMY-Qz-COi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="f3O-Ui-0IT" id="kkH-0j-h9t"/>
+                        <outlet property="passwordField" destination="37b-h3-RlW" id="ou3-0v-wl9"/>
+                        <outlet property="signInButton" destination="rkg-L5-VdC" id="x9O-yP-sqT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Td-cV-0FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

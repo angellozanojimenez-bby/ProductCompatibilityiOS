@@ -9,6 +9,12 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    
+    @IBOutlet var emailField: UITextField!
+    @IBOutlet var employeeNumberField: UITextField!
+    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var passwordConfirmationField: UITextField!
+    @IBOutlet var signUpButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
