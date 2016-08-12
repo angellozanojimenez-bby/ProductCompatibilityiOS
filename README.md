@@ -6,17 +6,18 @@ Xcode Version: 7.3.1
 **Clone the repository to your local machine, navigate to the directory and do 'pod install' to build the pods used in this project.**
 
 Pod File:
-
- 'target 'productCompatibility' do
+~~~~
+ target 'productCompatibility' do
  
-    pod 'Alamofire', '~> 3.4'  
-    pod 'Alamofire-Synchronous', '~> 3.0'  
-    pod 'SwiftyJSON'  
-    pod 'Material', '~> 1.0'  
-    pod 'Kingfisher', '~> 2.4'  
-    pod 'SwiftSpinner'  
+  pod 'Alamofire', '~> 3.4'  
+  pod 'Alamofire-Synchronous', '~> 3.0'  
+  pod 'SwiftyJSON'  
+  pod 'Material', '~> 1.0'  
+  pod 'Kingfisher', '~> 2.4'  
+  pod 'SwiftSpinner'  
   
- end'
+ end
+~~~~
 
 The latest version of the application contains the Podfile above. Please update accordingly.
 
