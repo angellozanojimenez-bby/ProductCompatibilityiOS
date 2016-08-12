@@ -43,6 +43,8 @@
 		C3D379EE1D42983D00561790 /* ic_close_black.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D379ED1D42983D00561790 /* ic_close_black.png */; };
 		C3D379F01D42B93400561790 /* CompatibleProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D379EF1D42B93400561790 /* CompatibleProductTableViewCell.swift */; };
 		C3D379F21D42B97E00561790 /* IncompatibleProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D379F11D42B97E00561790 /* IncompatibleProductTableViewCell.swift */; };
+		C3E0BC171D5E31F90091B87A /* Best_buy_logo-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E0BC161D5E31F90091B87A /* Best_buy_logo-2.png */; };
+		C3E0BC191D5E334F0091B87A /* gsp-yw-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E0BC181D5E334F0091B87A /* gsp-yw-banner.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		C3D379ED1D42983D00561790 /* ic_close_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_black.png; sourceTree = "<group>"; };
 		C3D379EF1D42B93400561790 /* CompatibleProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleProductTableViewCell.swift; sourceTree = "<group>"; };
 		C3D379F11D42B97E00561790 /* IncompatibleProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncompatibleProductTableViewCell.swift; sourceTree = "<group>"; };
+		C3E0BC161D5E31F90091B87A /* Best_buy_logo-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Best_buy_logo-2.png"; sourceTree = "<group>"; };
+		C3E0BC181D5E334F0091B87A /* gsp-yw-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gsp-yw-banner.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,8 @@
 				C3BE6B781D496001001AC375 /* angel.jpg */,
 				C3BE6B791D496001001AC375 /* grant.jpg */,
 				C3BE6B7A1D496001001AC375 /* jonathan.jpg */,
+				C3E0BC181D5E334F0091B87A /* gsp-yw-banner.png */,
+				C3E0BC161D5E31F90091B87A /* Best_buy_logo-2.png */,
 				C3BE6B7B1D496001001AC375 /* lane.jpg */,
 				C3BE6B7C1D496001001AC375 /* quan.jpg */,
 				C3BE6B7D1D496001001AC375 /* shawn.jpg */,
@@ -250,6 +256,7 @@
 			files = (
 				C3BE6B821D496001001AC375 /* jonathan.jpg in Resources */,
 				C35CDC911D40315200524CBC /* 4447800_sa.jpg in Resources */,
+				C3E0BC171D5E31F90091B87A /* Best_buy_logo-2.png in Resources */,
 				C36851931D26E94000F4DC2C /* LaunchScreen.storyboard in Resources */,
 				C3D379EE1D42983D00561790 /* ic_close_black.png in Resources */,
 				C384E3F01D2702400036B972 /* bby.png in Resources */,
@@ -265,6 +272,7 @@
 				C384E3F31D2704D00036B972 /* greenmark.png in Resources */,
 				C3BE6B831D496001001AC375 /* lane.jpg in Resources */,
 				C3BE6B801D496001001AC375 /* angel.jpg in Resources */,
+				C3E0BC191D5E334F0091B87A /* gsp-yw-banner.png in Resources */,
 				C30F8C6A1D4912A40044AC1F /* Leaderboard-100.png in Resources */,
 				C35CDC931D40328600524CBC /* 4447800_s.gif in Resources */,
 				C3BE6B861D496001001AC375 /* tony.jpg in Resources */,
