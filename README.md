@@ -2,6 +2,7 @@
 ## Angel Lozano, Summer 2016
 
 Xcode Version: 7.3.1
+
 **Clone the repository to your local machine, navigate to the directory and do 'pod install' to build the pods used in this project.**
 
 Pod File:
