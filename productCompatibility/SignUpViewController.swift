@@ -64,7 +64,7 @@ class SignUpViewController: UIViewController {
                             self.performSegueWithIdentifier("successfullyCreatedUser", sender: self)
                         case .Failure(let error):
                             print(error)
-                            let userErrorController = UIAlertController(title: "Error!", message: "Email or Employee ID has already been used. Please check your credentials.", preferredStyle: UIAlertControllerStyle.Alert)
+                            let userErrorController = UIAlertController(title: "Error", message: "Email or Employee ID has already been used. Please check your credentials.", preferredStyle: UIAlertControllerStyle.Alert)
                             let okayAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
                                 print("Okay.")
                             }
@@ -73,7 +73,7 @@ class SignUpViewController: UIViewController {
                         }
                 }
             } else {
-                let passwordErrorController = UIAlertController(title: "Error!", message: "Passwords do not match, please try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                let passwordErrorController = UIAlertController(title: "Error", message: "Passwords do not match, please try again.", preferredStyle: UIAlertControllerStyle.Alert)
                 let okayAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
                     print("Okay.")
                 }

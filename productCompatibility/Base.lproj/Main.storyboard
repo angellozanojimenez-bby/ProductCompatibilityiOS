@@ -1517,7 +1517,7 @@
                                 <rect key="frame" x="20" y="257" width="560" height="32"/>
                                 <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                         <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
@@ -1547,7 +1547,7 @@
                                 <rect key="frame" x="20" y="187" width="560" height="32"/>
                                 <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
                                         <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
@@ -1595,6 +1595,9 @@
                                         <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInAction" destination="b6g-Pj-Opp" eventType="touchUpInside" id="OGc-AF-fLq"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bby.png" translatesAutoresizingMaskIntoConstraints="NO" id="laC-sM-gwR">
                                 <rect key="frame" x="225" y="340" width="150" height="150"/>
@@ -1625,6 +1628,7 @@
                         <outlet property="emailField" destination="f3O-Ui-0IT" id="kkH-0j-h9t"/>
                         <outlet property="passwordField" destination="37b-h3-RlW" id="ou3-0v-wl9"/>
                         <outlet property="signInButton" destination="rkg-L5-VdC" id="x9O-yP-sqT"/>
+                        <segue destination="FVi-zF-qcu" kind="show" identifier="successfulUserSignIn" id="ENZ-Uq-2DS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Td-cV-0FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1676,6 +1680,7 @@
         <image name="ic_close_black.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ENZ-Uq-2DS"/>
         <segue reference="2aR-B9-biC"/>
         <segue reference="c7S-0a-eod"/>
     </inferredMetricsTieBreakers>
