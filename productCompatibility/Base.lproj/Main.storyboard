@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xz5-8c-xe7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mDL-hK-xYu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -220,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilo-t2-DaG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="927"/>
+            <point key="canvasLocation" x="987" y="927"/>
         </scene>
         <!--Incompatible Products-->
         <scene sceneID="W0X-tw-FEX">
@@ -242,7 +242,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PoH-Dz-yTh" id="uwy-Bh-x27">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fqh-5X-XQ0">
@@ -346,7 +346,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fct-1L-KHA" id="y1w-Q2-pXS">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tMT-bn-DOT">
@@ -461,7 +461,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5TP-wx-vwo" id="bHh-Fk-I2N">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dOx-xk-nu9">
@@ -828,7 +828,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85E-9J-R6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="629.99999999999989"/>
+            <point key="canvasLocation" x="1974" y="629"/>
         </scene>
         <!--Manual SKU Input-->
         <scene sceneID="tne-QT-ifu">
@@ -1068,7 +1068,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="1342"/>
+            <point key="canvasLocation" x="1974" y="1342"/>
         </scene>
         <!--Thank You View Controller-->
         <scene sceneID="KXh-12-BTz">
@@ -1151,7 +1151,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqL-iK-gTE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="4zE-sB-kpb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2178" y="927"/>
+            <point key="canvasLocation" x="2990" y="927"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oy4-CX-uxk">
@@ -1173,12 +1173,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4I-Co-7PW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-804" y="927"/>
+            <point key="canvasLocation" x="8" y="927"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="oYw-Hk-bMu">
             <objects>
-                <viewController id="Xz5-8c-xe7" sceneMemberID="viewController">
+                <viewController id="Xz5-8c-xe7" customClass="MainMenuViewController" customModule="productCompatibility" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kt9-f4-ubh"/>
                         <viewControllerLayoutGuide type="bottom" id="QSH-Cc-p9e"/>
@@ -1226,7 +1226,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue Shirt Super Tool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1v4-aj-9Md">
                                 <rect key="frame" x="144" y="83" width="313" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="313" id="AkH-Fn-947"/>
+                                    <constraint firstAttribute="width" constant="313" id="jdv-y9-OZ2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1236,17 +1236,17 @@
                         <color key="backgroundColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SWr-S0-Ge1" firstAttribute="leading" secondItem="9Hh-6e-Yax" secondAttribute="leading" id="0RK-1T-uOj"/>
+                            <constraint firstItem="1v4-aj-9Md" firstAttribute="centerX" secondItem="4PS-qK-1tk" secondAttribute="centerX" id="6IH-pf-M7K"/>
                             <constraint firstItem="QSH-Cc-p9e" firstAttribute="top" secondItem="4PS-qK-1tk" secondAttribute="bottom" constant="96" id="6eB-B6-zYo"/>
                             <constraint firstItem="SWr-S0-Ge1" firstAttribute="leading" secondItem="nup-z3-n2z" secondAttribute="leading" id="C7x-Ux-3kc"/>
                             <constraint firstItem="4PS-qK-1tk" firstAttribute="leading" secondItem="9Hh-6e-Yax" secondAttribute="leading" id="FMO-pR-ayY"/>
                             <constraint firstItem="SWr-S0-Ge1" firstAttribute="bottom" secondItem="QSH-Cc-p9e" secondAttribute="top" id="Khc-LO-Mg4"/>
-                            <constraint firstItem="1v4-aj-9Md" firstAttribute="centerX" secondItem="4PS-qK-1tk" secondAttribute="centerX" id="MUr-o8-cNh"/>
                             <constraint firstItem="4PS-qK-1tk" firstAttribute="trailing" secondItem="9Hh-6e-Yax" secondAttribute="trailing" id="RLD-C6-HGb"/>
                             <constraint firstItem="SWr-S0-Ge1" firstAttribute="trailing" secondItem="9Hh-6e-Yax" secondAttribute="trailing" id="TuJ-IE-SJd"/>
+                            <constraint firstItem="1v4-aj-9Md" firstAttribute="top" secondItem="Kt9-f4-ubh" secondAttribute="bottom" constant="19" id="hWP-kQ-Z3y"/>
                             <constraint firstItem="9Hh-6e-Yax" firstAttribute="top" secondItem="4PS-qK-1tk" secondAttribute="bottom" constant="-7" id="iBr-bb-rOa"/>
-                            <constraint firstItem="4PS-qK-1tk" firstAttribute="top" secondItem="1v4-aj-9Md" secondAttribute="bottom" constant="62" id="jqR-Am-5sl"/>
                             <constraint firstItem="9Hh-6e-Yax" firstAttribute="top" secondItem="4PS-qK-1tk" secondAttribute="bottom" constant="-1" id="lBS-DQ-mec"/>
-                            <constraint firstItem="1v4-aj-9Md" firstAttribute="top" secondItem="Kt9-f4-ubh" secondAttribute="bottom" constant="63" id="sHJ-ai-k1l"/>
+                            <constraint firstItem="4PS-qK-1tk" firstAttribute="top" secondItem="1v4-aj-9Md" secondAttribute="bottom" constant="62" id="o43-g6-RKU"/>
                             <constraint firstItem="SWr-S0-Ge1" firstAttribute="top" secondItem="9Hh-6e-Yax" secondAttribute="bottom" constant="-1" id="sx4-4s-n4d"/>
                             <constraint firstAttribute="trailing" secondItem="SWr-S0-Ge1" secondAttribute="trailing" id="uDe-pb-DJC"/>
                         </constraints>
@@ -1257,10 +1257,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="JHx-QK-1Sv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLV-cr-SRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2530" y="927"/>
+            <point key="canvasLocation" x="-1718" y="927"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="bJ5-6P-iEg">
@@ -1274,7 +1275,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aeh-C9-jaC" customClass="TextField" customModule="Material">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aeh-C9-jaC" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="20" y="120" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="2l8-4r-ejC"/>
@@ -1298,9 +1299,16 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableClearIconButton" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clearIconButtonAutoHandle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="detailColor">
+                                        <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="Use your Best Buy email."/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="detailVerticalOffset">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJQ-hN-UoK" customClass="TextField" customModule="Material">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJQ-hN-UoK" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="20" y="190" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Wrs-GX-kuJ"/>
@@ -1324,9 +1332,16 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableClearIconButton" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clearIconButtonAutoHandle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="Use your Best Buy employee number."/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="detailColor">
+                                        <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="detailVerticalOffset">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-Na-4JG" customClass="TextField" customModule="Material">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rYE-Na-4JG" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="20" y="260" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LR7-PS-IeD"/>
@@ -1350,9 +1365,16 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableVisibilityIconButton" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="visibilityIconButtonAutoHandle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="Make it a strong password."/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="detailColor">
+                                        <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="detailVerticalOffset">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s4w-Hp-kGD" customClass="TextField" customModule="Material">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s4w-Hp-kGD" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="20" y="330" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="DO4-ko-JnQ"/>
@@ -1395,14 +1417,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bby.png" translatesAutoresizingMaskIntoConstraints="NO" id="nxW-zI-YCc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bby.png" translatesAutoresizingMaskIntoConstraints="NO" id="nxW-zI-YCc">
                                 <rect key="frame" x="225" y="377" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="hhR-XT-1cm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mb-NM-sch">
-                                <rect key="frame" x="233" y="60" width="134" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mb-NM-sch">
+                                <rect key="frame" x="233" y="64" width="134" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="e3f-O1-HCm"/>
                                 </constraints>
@@ -1466,7 +1488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXv-P3-l9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1699" y="539"/>
+            <point key="canvasLocation" x="-887" y="539"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="U9X-vx-6N2">
@@ -1480,7 +1502,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="37b-h3-RlW" customClass="TextField" customModule="Material">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="37b-h3-RlW" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="20" y="257" width="560" height="32"/>
                                 <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1501,9 +1523,16 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="dividerActiveColor">
                                         <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="detailColor">
+                                        <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="detailVerticalOffset">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="Keep your password private."/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3O-Ui-0IT" customClass="TextField" customModule="Material">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3O-Ui-0IT" customClass="TextField" customModule="Material">
                                 <rect key="frame" x="20" y="187" width="560" height="32"/>
                                 <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1524,10 +1553,17 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableClearIconButton" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clearIconButtonAutoHandle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="detailColor">
+                                        <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="detailVerticalOffset">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="Make sure you are using your Best Buy email."/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXt-Ga-z2Q">
-                                <rect key="frame" x="231" y="99" width="139" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXt-Ga-z2Q">
+                                <rect key="frame" x="230.5" y="99" width="139" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1549,7 +1585,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bby.png" translatesAutoresizingMaskIntoConstraints="NO" id="laC-sM-gwR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bby.png" translatesAutoresizingMaskIntoConstraints="NO" id="laC-sM-gwR">
                                 <rect key="frame" x="225" y="340" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="1Ng-Jt-PTa"/>
@@ -1582,7 +1618,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Td-cV-0FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1699" y="1254"/>
+            <point key="canvasLocation" x="-887" y="1254"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zjm-dG-UUR">
@@ -1600,6 +1636,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJB-Ta-IW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dfr-yL-mNH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mDL-hK-xYu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dgz-BY-NFi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xz5-8c-xe7" kind="relationship" relationship="rootViewController" id="huQ-2L-TRD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nUr-Ct-6kG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2530" y="927"/>
         </scene>
     </scenes>
     <resources>
