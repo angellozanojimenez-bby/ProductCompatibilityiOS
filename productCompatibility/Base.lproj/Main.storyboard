@@ -1365,7 +1365,7 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableVisibilityIconButton" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="visibilityIconButtonAutoHandle" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="Make it a strong password."/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="Must be 8 characters. Make it a strong password."/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="detailColor">
                                         <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -1398,6 +1398,13 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="enableVisibilityIconButton" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="visibilityIconButtonAutoHandle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="detailColor">
+                                        <color key="value" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="detailVerticalOffset">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="detail" value="Must be 8 characters."/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYu-uM-6Wm" customClass="MaterialButton">
