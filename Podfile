@@ -12,5 +12,6 @@ target 'productCompatibility' do
   pod 'Material', '~> 1.0'
   pod 'Kingfisher', '~> 2.4'
   pod 'SwiftSpinner'
+  pod 'CryptoSwift'
   
 end

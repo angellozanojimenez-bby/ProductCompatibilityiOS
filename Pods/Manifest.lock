@@ -2,6 +2,7 @@ PODS:
   - Alamofire (3.4.1)
   - Alamofire-Synchronous (3.0.0):
     - Alamofire (~> 3.0)
+  - CryptoSwift (0.5.1)
   - Kingfisher (2.4.1)
   - Material (1.42.7)
   - SwiftSpinner (0.9.5)
@@ -10,6 +11,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.4)
   - Alamofire-Synchronous (~> 3.0)
+  - CryptoSwift
   - Kingfisher (~> 2.4)
   - Material (~> 1.0)
   - SwiftSpinner
@@ -18,11 +20,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   Alamofire-Synchronous: dc5dccc284e03c3b760e09c655dfe6fa292364b6
+  CryptoSwift: df42dda18baf6c76347a94e227dbcc0a341304bd
   Kingfisher: 41aed5b6c1ed8fa98cf6d75283ce89cf7890f517
   Material: 2d46a44719b1f19e52956518af8aea54ac714963
   SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 91da140fcbdd4933f2907855abcbf3a7acb95d27
+PODFILE CHECKSUM: d1e5f132df49841d5171c0c00bfca7898b03c532
 
 COCOAPODS: 1.0.1
