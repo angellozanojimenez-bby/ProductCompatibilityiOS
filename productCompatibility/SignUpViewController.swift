@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpViewController: UIViewController {
     
@@ -15,6 +16,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var passwordConfirmationField: UITextField!
     @IBOutlet var signUpButton: UIButton!
+    
+    // Headers used for the HTTP requests.
+    let headers = [
+        "Accept": "application/vnd.productcompatibility.v1",
+        "ContentType": "application/json"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +33,23 @@ class SignUpViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func signUpAction() {
+        
+        if let email = emailField.text, let employeeNumber = employeeNumberField.text, let password = passwordField.text, let passwordConfirmation = passwordConfirmationField.text {
+            if password == passwordConfirmation {
+                print("Email: \(email)")
+                print("Employee #: \(employeeNumber)")
+            } else {
+                let passwordErrorController = UIAlertController(title: "Error!", message: "Passwords do not match, please try again.", preferredStyle: UIAlertControllerStyle.Alert)
+                let okayAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
+                    print("Okay.")
+                }
+                passwordErrorController.addAction(okayAction)
+                self.presentViewController(passwordErrorController, animated: true, completion: nil)
+            }
+        }
     }
     
 
