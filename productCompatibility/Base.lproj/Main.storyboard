@@ -1315,7 +1315,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.0" green="0.23137254900000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Employee Number"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
@@ -1487,6 +1487,7 @@
                         <outlet property="passwordConfirmationField" destination="s4w-Hp-kGD" id="8JB-Af-1af"/>
                         <outlet property="passwordField" destination="rYE-Na-4JG" id="wep-X8-lw3"/>
                         <outlet property="signUpButton" destination="ZYu-uM-6Wm" id="fZc-JR-KcG"/>
+                        <segue destination="FVi-zF-qcu" kind="show" identifier="successfullyCreatedUser" id="enM-iX-7YF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXv-P3-l9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
