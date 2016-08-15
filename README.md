@@ -4,7 +4,7 @@
 Xcode Version: 7.3.1
 
 **Clone the repository to your local machine, navigate to the directory and do 'pod install' to build the pods used in this project.**  
-**IMPORTANT: For time constraints, most of the UI was made to work using AutoLayout and the iPhone 6s simulator/real iPhone 6s device. UI might be a little skewed for other phone sizes, important thing to remember if I don't get to fix these issues. Looks good on 6s.**
+**IMPORTANT: For time constraints, most of the UI was made to work using AutoLayout and the iPhone 6/6s simulator/real iPhone 6s device. UI might be a little skewed for other phone sizes, important thing to remember if I don't get to fix these issues. Looks good on 6/6s.**
 
 Pod File:
 ~~~~
